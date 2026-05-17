@@ -1,78 +1,85 @@
+<div align="center">
+
 # 🌍 World Bank: Global Economic Development & Income Distribution
 
+### *Exploring two decades of global GDP, income inequality, and demographic shifts*
+
 ![Power BI](https://img.shields.io/badge/Power_BI-F2C811?style=for-the-badge&logo=powerbi&logoColor=black)
-![Data Architecture](https://img.shields.io/badge/Architecture-Source_Control_PBIP-0F2C59?style=for-the-badge)
-![Status](https://img.shields.io/badge/Status-Completed-success?style=for-the-badge)
+![Architecture](https://img.shields.io/badge/Architecture-PBIP_Source_Control-0F2C59?style=for-the-badge&logo=git&logoColor=white)
+![Data Source](https://img.shields.io/badge/Data-World_Bank_WDI-00843D?style=for-the-badge&logo=worldhealthorganization&logoColor=white)
+![Status](https://img.shields.io/badge/Status-Completed-2EA44F?style=for-the-badge)
+
+<br>
+
+<img src="assets/dashboard_screenshot.png" alt="Perspectivas Mundiales — Dashboard Preview" width="100%">
+
+</div>
+
+---
 
 ## 📌 Overview
 
-This analytical project provides an interactive and in-depth view of global economic disparities, income distribution, and GDP per capita growth over the last two decades.
+This analytical project delivers an interactive, in-depth view of **global economic disparities**, income distribution, and GDP per capita growth over the last two decades.
 
-Developed using official data from the **World Bank — World Development Indicators (WDI)**, the dashboard allows users to explore demographic and economic structures at regional and country levels, adjusted for Purchasing Power Parity (PPP in constant 2021 international dollars).
+Built on official data from the **World Bank — World Development Indicators (WDI)**, the dashboard enables exploration of demographic and economic structures at regional and country levels, all figures adjusted for **Purchasing Power Parity** *(PPP, constant 2021 international dollars)*.
 
-<div align="center">
-  <img src="assets/dashboard_screenshot.png" alt="World Bank Dashboard Screenshot" width="100%">
-</div>
+> **Key scope:** 217 economies · 2000–2024 · PPP-adjusted · World Bank WDI
+
+---
+
+## 💡 Key Features
+
+| Feature | Description |
+|---|---|
+| 🗺️ **Globe Map** | Orthographic choropleth visualizing GDP per capita concentration across hemispheres |
+| 📖 **Smart Narrative** | Auto-updating KPI panel that adapts to every filter selection |
+| 📊 **Growth Timeline** | Bar chart flagging recession years (red) vs. recovery phases (green) |
+| 🔢 **Regional Matrix** | Population Share vs. GDP Share — exposing structural economic gaps |
+| 📈 **Benchmarking** | Dual-line chart comparing any country's trajectory against the global average |
+| 🎚️ **Timeline Slider** | Cross-filter control spanning 2000–2024 |
 
 ---
 
 ## 🏗️ Project Architecture
 
-To demonstrate best practices in **Analytics Engineering and BI development**, this repository uses the **Power BI Project (`.pbip`)** format for Git version control. This allows keeping the data and design code in plain text (JSON/TMDL), while also providing a compiled file (`.pbix`) for easy visualization and interaction.
+This repository uses the **Power BI Project (`.pbip`)** format for Git version control, keeping the semantic model and design code in plain text (JSON / TMDL) alongside a compiled `.pbix` for end-user delivery.
 
 ```text
 worldbank-dashboard/
-├── data/           # Static processed data (Excel/CSV) - Local source of truth
-├── semantic-model/ # ⚙️ SOURCE CODE (.pbip): Semantic model and design in plain text for Git
-├── report/         # 🚀 DELIVERABLE (.pbix): Compiled file ready for end-users
-├── dax/            # Code repository for extracted complex metrics
-└── assets/         # Visual resources (JSON Themes, backgrounds, images)
+│
+├── 📁 data/             # Static processed data (Excel/CSV) — local source of truth
+├── 📁 semantic-model/   # ⚙️  SOURCE CODE (.pbip): model & design in plain text for Git
+├── 📁 report/           # 🚀 DELIVERABLE (.pbix): compiled file ready for Power BI Desktop
+├── 📁 dax/              # Documented DAX measures (complex metrics extracted for review)
+└── 📁 assets/           # JSON themes, background templates, images
 ```
-
----
-
-## 💡 Key Features & Visual Analysis
-
-**Dynamic Data Storytelling:** A smart narrative panel that automatically updates key metrics based on user filters — for example, highlighting that in 2022, global income levels averaged **20,453 international dollars (PPP)** across **217 Economies** and a population of over **7,966.3 M**.
-
-**Advanced Geospatial Mapping (Globe Map):** An orthographic map illustrating Global GDP per Capita by Economy. The custom blue color scale instantly highlights the concentration of wealth across hemispheres.
-
-**Interactive Filtering System:**
-- A **Regional Coverage** slicer to isolate specific continents (e.g., East Asia & Pacific, Sub-Saharan Africa).
-- A dynamic **Timeline Slider** at the bottom, enabling seamless cross-filtering from 2000 to 2024.
-
-**Historical Impact & Volatility:** The *Evolution of Global GDP per Capita Growth* chart visually flags negative growth periods (e.g., the red bar during the 2020 global recession) versus recovery phases (e.g., 3.6% growth in 2022).
-
-**Regional Decomposition Matrix:** A detailed tabular view contrasting **Population Share** (% of World Population) against **GDP Share** (% of Global GDP), clearly exposing structural economic gaps.
-
-**Relative Benchmarking:** A dual-line chart (*GDP per Capita Relative to the Global Average*) evaluating a specific country's performance — e.g., Singapore — against the overarching Global GDP Trend.
 
 ---
 
 ## ⚙️ Technical Specifications
 
-### Data Modeling & Architecture
- 
+### Data Model — Star Schema
+
 ```mermaid
 erDiagram
     DIM_COUNTRY       ||--o{ FACT_WORLD_BANK_DATA : "filters"
     DIM_YEAR          ||--o{ FACT_WORLD_BANK_DATA : "filters"
     DIM_YEAR_SELECTOR  |o--o{ FACT_WORLD_BANK_DATA : "DAX benchmark filter"
- 
+
     DIM_COUNTRY {
-        Text    country_code   PK
-        Text    country_name
-        Text    capital
-        Text    income_level
-        Text    region
-        Decimal latitude
-        Decimal longitude
+        Text          country_code   PK
+        Text          country_name
+        Text          capital
+        Text          income_level
+        Text          region
+        DecimalNumber latitude
+        DecimalNumber longitude
     }
- 
+
     DIM_YEAR {
         WholeNumber year PK
     }
- 
+
     FACT_WORLD_BANK_DATA {
         Text          country
         Text          country_code      FK
@@ -83,62 +90,79 @@ erDiagram
         DecimalNumber poverty_headcount
         WholeNumber   total_population
     }
- 
+
     DIM_YEAR_SELECTOR {
         WholeNumber year
     }
 ```
 
-**Star Schema:** Optimized dimensional modeling separating contextual dimensions (`Dim Country`, `Dim Year`) from the quantitative fact table (`Fact World Bank Data`) for peak VertiPaq engine performance.
+**Star Schema** — contextual dimensions (`Dim Country`, `Dim Year`) are cleanly separated from the quantitative fact table for peak VertiPaq engine performance.
 
-**Disconnected Tables for Benchmarking:** Implementation of a detached parameter table (`Dim Year Selector`) to allow dynamic benchmark comparisons without disrupting the primary historical filter context.
-
-### Advanced DAX Implementation
-
-The semantic model features enterprise-grade DAX, moving beyond basic aggregations:
-
-- **Macroeconomic Weighted Averages:** Utilizing `SUMX` and `DIVIDE` to calculate accurate regional/global GDP and Poverty ratios weighted by population size, avoiding statistical distortions from simple averages.
-
-- **Context Transition & Filter Overrides:** Extensive use of `CALCULATE` combined with `REMOVEFILTERS` to build dynamic baselines (e.g., preserving historical trends while filtering specific years).
-
-- **DAX-Driven UI/UX:** Dynamic injection of HEX color codes (`SWITCH`) to highlight specific data points (e.g., negative growth years) and intelligent number formatting (conditionally displaying `'M'` for millions or `'K'` for thousands based on filter context).
-
-> 📝 The code for the main measures is documented in the `/dax/` folder.
-
-### UI/UX Design
-
-- **Color Palette:** Custom theme (JSON) inspired by the World Bank's corporate identity, prioritizing a clean, minimal interface.
-- **Navigation:** Structured grid layout system that guides the user's eye from the high-level global map to specific regional tables and trend lines.
+**Disconnected Slicer** — `Dim Year Selector` operates via DAX without an active model relationship, enabling benchmark comparisons that don't disturb the primary filter context.
 
 ---
 
-## 🚀 How to Run This Project
+### Advanced DAX Implementation
 
-There are two ways to explore this repository depending on the level of detail you wish to consult:
+The semantic model goes beyond basic aggregations with three core patterns:
 
-### Option 1: Quick View *(Recommended for interaction)*
+**① Macroeconomic Weighted Averages**
+> `SUMX` + `DIVIDE` — regional and global GDP ratios weighted by population, avoiding distortions from simple averages.
 
-If you want to open the dashboard directly to test its interactivity and design:
+**② Context Transition & Filter Overrides**
+> `CALCULATE` + `REMOVEFILTERS` — dynamic baselines that preserve historical trends while a year filter is active.
 
-1. Clone or download this repository to your local machine.
-2. Navigate to the `report/` folder.
-3. Open the `World_Bank_Delivery.pbix` file with **Power BI Desktop**. The model and charts will load automatically.
+**③ DAX-Driven UI/UX**
+> `SWITCH` on HEX color codes to highlight negative growth years; conditional formatting to display `M` (millions) or `K` (thousands) based on filter context.
 
-### Option 2: Architecture & Code Audit
+> 📁 All measure code is documented in the [`/dax`](./dax/) folder.
 
-If you want to inspect the semantic model structure and version control setup:
+---
 
-1. Clone the repository.
-2. Navigate to the `semantic-model/` folder.
-3. Open the `.pbip` (Power BI Project) file. Explore the natively generated `.SemanticModel` and `.Report` folders to review code serialization in JSON and TMDL formats.
+### UI/UX Design
+
+- **Color System** — custom JSON theme aligned with World Bank corporate identity; blue-dominant, minimal chrome.
+- **Layout** — structured grid guiding the eye from the global map → regional breakdown → country benchmarking.
+- **Typography** — editorial hierarchy separating KPI values, labels, and narrative text for fast scanning.
+
+---
+
+## 🚀 How to Run
+
+### ⚡ Option 1 — Quick View *(recommended)*
+
+For interactivity and design exploration:
+
+```bash
+# 1. Clone the repository
+git clone https://github.com/your-username/worldbank-dashboard.git
+
+# 2. Open in Power BI Desktop
+report/World_Bank_Delivery.pbix
+```
+
+### 🔬 Option 2 — Architecture & Code Audit
+
+For semantic model inspection and version control review:
+
+```bash
+# Open the .pbip project file
+semantic-model/  →  .SemanticModel  /  .Report   (JSON + TMDL)
+```
 
 ---
 
 ## ✉️ Contact
 
-**[Tu Nombre / Tu Apellido]**<br>
-Data Analyst / Analytics Engineer
+<div align="center">
+
+**Yeison**
+Data Analyst · Analytics Engineer
+
+<br>
 
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](TU_LINK_DE_LINKEDIN)
-[![Portfolio](https://img.shields.io/badge/Web_Portfolio-000000?style=for-the-badge&logo=githubpages&logoColor=white)](TU_LINK_DEL_PORTAFOLIO)
+[![Portfolio](https://img.shields.io/badge/Portfolio-000000?style=for-the-badge&logo=githubpages&logoColor=white)](TU_LINK_DEL_PORTAFOLIO)
 [![Email](https://img.shields.io/badge/Email-EA4335?style=for-the-badge&logo=gmail&logoColor=white)](mailto:TU_CORREO@gmail.com)
+
+</div>
