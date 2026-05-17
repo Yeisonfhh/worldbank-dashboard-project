@@ -1,0 +1,75 @@
+table 'Dim Country'
+	lineageTag: 74dd8755-c27e-4675-8112-8607842eaf35
+
+	column country_code
+		dataType: string
+		lineageTag: 0df5a829-1bf4-4722-888c-d04b0d4c1991
+		summarizeBy: none
+		sourceColumn: country_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column country_name
+		dataType: string
+		lineageTag: c547fb5c-b9a8-4415-b7e5-4bbc60601856
+		summarizeBy: none
+		sourceColumn: country_name
+
+		annotation SummarizationSetBy = Automatic
+
+	column region
+		dataType: string
+		lineageTag: a3d2ac8f-aec3-4244-a8f4-e5a7becb70b0
+		summarizeBy: none
+		sourceColumn: region
+
+		annotation SummarizationSetBy = Automatic
+
+	column income_level
+		dataType: string
+		lineageTag: f15dc76b-c417-4032-a9b0-badb70b1ee83
+		summarizeBy: none
+		sourceColumn: income_level
+
+		annotation SummarizationSetBy = Automatic
+
+	column capital
+		dataType: string
+		lineageTag: 552e0dbc-5487-4d77-80bd-0fe4645f5fa2
+		summarizeBy: none
+		sourceColumn: capital
+
+		annotation SummarizationSetBy = Automatic
+
+	column longitude
+		dataType: double
+		lineageTag: 7d34690f-da67-442b-b937-a87e4423100d
+		summarizeBy: none
+		sourceColumn: longitude
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column latitude
+		dataType: double
+		lineageTag: 2aa9db0e-53c8-4e0c-9f1f-1edd74b995ee
+		summarizeBy: none
+		sourceColumn: latitude
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	partition 'Dim Country' = m
+		mode: import
+		source =
+				let
+				    Origen = Parquet.Document(File.Contents("C:\Users\USUARIO\Documents\Projects\worldbank_data_project\data\gold\country_metadata\part-0.parquet"), [Compression=null, LegacyColumnNameEncoding=false, MaxDepth=null])
+				in
+				    Origen
+
+	annotation PBI_ResultType = Table
+
+	annotation PBI_NavigationStepName = Navegación
+

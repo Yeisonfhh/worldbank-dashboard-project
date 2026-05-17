@@ -1,0 +1,3591 @@
+cultureInfo es-ES
+
+	linguisticMetadata =
+			{
+			  "Version": "4.1.0",
+			  "Language": "en-US",
+			  "Entities": {
+			    "country": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Dim Country"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "country": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "nation": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.736
+			          }
+			        },
+			        {
+			          "location": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.736
+			          }
+			        }
+			      ]
+			    },
+			    "country.country_code": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Dim Country",
+			          "ConceptualProperty": "country_code"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "country code": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "code": {
+			            "State": "Generated",
+			            "Weight": 0.97
+			          }
+			        },
+			        {
+			          "country_code": {
+			            "Type": "Noun",
+			            "State": "Generated",
+			            "Weight": 0.99
+			          }
+			        },
+			        {
+			          "country id": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.75
+			          }
+			        },
+			        {
+			          "country key": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.727
+			          }
+			        },
+			        {
+			          "nation code": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.6
+			          }
+			        },
+			        {
+			          "location code": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.6
+			          }
+			        }
+			      ],
+			      "NameType": "Identifier"
+			    },
+			    "country.country_name": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Dim Country",
+			          "ConceptualProperty": "country_name"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "country name": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "name": {
+			            "State": "Generated",
+			            "Weight": 0.97
+			          }
+			        },
+			        {
+			          "country_name": {
+			            "Type": "Noun",
+			            "State": "Generated",
+			            "Weight": 0.99
+			          }
+			        },
+			        {
+			          "country nickname": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.727
+			          }
+			        },
+			        {
+			          "country title": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.727
+			          }
+			        },
+			        {
+			          "country label": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.727
+			          }
+			        },
+			        {
+			          "country tag": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.727
+			          }
+			        },
+			        {
+			          "nation name": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.6
+			          }
+			        },
+			        {
+			          "location name": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.6
+			          }
+			        }
+			      ],
+			      "NameType": "Name"
+			    },
+			    "country.region": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Dim Country",
+			          "ConceptualProperty": "region"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "region": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "location": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.818
+			          }
+			        },
+			        {
+			          "province": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.736
+			          }
+			        },
+			        {
+			          "area": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.714
+			          }
+			        },
+			        {
+			          "district": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.714
+			          }
+			        },
+			        {
+			          "section": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.714
+			          }
+			        },
+			        {
+			          "zone": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.714
+			          }
+			        },
+			        {
+			          "continent": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.714
+			          }
+			        }
+			      ]
+			    },
+			    "country.income_level": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Dim Country",
+			          "ConceptualProperty": "income_level"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "income level": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "income_level": {
+			            "Type": "Noun",
+			            "State": "Generated",
+			            "Weight": 0.99
+			          }
+			        },
+			        {
+			          "level": {
+			            "State": "Generated",
+			            "Weight": 0.97
+			          }
+			        },
+			        {
+			          "income quantity": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.75
+			          }
+			        },
+			        {
+			          "income threshold": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.75
+			          }
+			        },
+			        {
+			          "threshold": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.736
+			          }
+			        },
+			        {
+			          "income amount": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.727
+			          }
+			        },
+			        {
+			          "income grade": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.727
+			          }
+			        },
+			        {
+			          "income point": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.727
+			          }
+			        },
+			        {
+			          "income rank": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.727
+			          }
+			        },
+			        {
+			          "income tier": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.727
+			          }
+			        },
+			        {
+			          "grade": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.714
+			          }
+			        },
+			        {
+			          "point": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.714
+			          }
+			        }
+			      ]
+			    },
+			    "country.capital": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Dim Country",
+			          "ConceptualProperty": "capital"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "capital": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "wealth": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.491
+			          }
+			        },
+			        {
+			          "money": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.491
+			          }
+			        },
+			        {
+			          "investment": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.491
+			          }
+			        },
+			        {
+			          "principal": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.476
+			          }
+			        },
+			        {
+			          "hub": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.466
+			          }
+			        },
+			        {
+			          "center": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.452
+			          }
+			        },
+			        {
+			          "headquarters": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.452
+			          }
+			        }
+			      ]
+			    },
+			    "country.longitude": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Dim Country",
+			          "ConceptualProperty": "longitude"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "longitude": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "country.latitude": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Dim Country",
+			          "ConceptualProperty": "latitude"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "latitude": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "leeway": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.491
+			          }
+			        },
+			        {
+			          "freedom": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.491
+			          }
+			        },
+			        {
+			          "autonomy": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.491
+			          }
+			        },
+			        {
+			          "liberty": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.491
+			          }
+			        },
+			        {
+			          "opportunity": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.491
+			          }
+			        },
+			        {
+			          "room": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.476
+			          }
+			        },
+			        {
+			          "scope": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.476
+			          }
+			        },
+			        {
+			          "space": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.476
+			          }
+			        },
+			        {
+			          "rope": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.476
+			          }
+			        },
+			        {
+			          "location": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.466
+			          }
+			        }
+			      ]
+			    },
+			    "wdi": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Fact World Bank Data"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "wdi": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "wdi.country_code": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Fact World Bank Data",
+			          "ConceptualProperty": "country_code"
+			        }
+			      },
+			      "State": "Generated",
+			      "Visibility": {
+			        "Value": "Hidden"
+			      },
+			      "Terms": [
+			        {
+			          "country code": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "country_code": {
+			            "Type": "Noun",
+			            "State": "Generated",
+			            "Weight": 0.99
+			          }
+			        },
+			        {
+			          "country id": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.75
+			          }
+			        },
+			        {
+			          "country key": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.727
+			          }
+			        },
+			        {
+			          "nation code": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.6
+			          }
+			        },
+			        {
+			          "location code": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.6
+			          }
+			        }
+			      ]
+			    },
+			    "wdi.country": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Fact World Bank Data",
+			          "ConceptualProperty": "country"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "country": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "nation": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.736
+			          }
+			        },
+			        {
+			          "location": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.736
+			          }
+			        }
+			      ]
+			    },
+			    "wdi.year": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Fact World Bank Data",
+			          "ConceptualProperty": "year"
+			        }
+			      },
+			      "State": "Generated",
+			      "Visibility": {
+			        "Value": "Hidden"
+			      },
+			      "Terms": [
+			        {
+			          "year": {
+			            "Type": "Noun",
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "yr": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.736
+			          }
+			        }
+			      ],
+			      "SemanticType": "Time"
+			    },
+			    "wdi.gdp_per_capita": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Fact World Bank Data",
+			          "ConceptualProperty": "gdp_per_capita"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "gdp per capita": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "gdp_per_capita": {
+			            "Type": "Noun",
+			            "State": "Generated",
+			            "Weight": 0.99
+			          }
+			        }
+			      ]
+			    },
+			    "wdi.total_population": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Fact World Bank Data",
+			          "ConceptualProperty": "total_population"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "total population": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "total_population": {
+			            "Type": "Noun",
+			            "State": "Generated",
+			            "Weight": 0.99
+			          }
+			        },
+			        {
+			          "population": {
+			            "State": "Generated",
+			            "Weight": 0.97
+			          }
+			        },
+			        {
+			          "aggregate population": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.582
+			          }
+			        },
+			        {
+			          "overall population": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.582
+			          }
+			        },
+			        {
+			          "total populace": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.5
+			          }
+			        },
+			        {
+			          "total person": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.5
+			          }
+			        },
+			        {
+			          "populace": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.491
+			          }
+			        },
+			        {
+			          "person": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.491
+			          }
+			        }
+			      ]
+			    },
+			    "wdi.poverty_headcount_ratio": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Fact World Bank Data",
+			          "ConceptualProperty": "poverty_headcount_ratio"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "poverty headcount ratio": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "poverty_headcount_ratio": {
+			            "Type": "Noun",
+			            "State": "Generated",
+			            "Weight": 0.99
+			          }
+			        },
+			        {
+			          "ratio": {
+			            "State": "Generated",
+			            "Weight": 0.97
+			          }
+			        },
+			        {
+			          "headcount ratio": {
+			            "State": "Generated",
+			            "Weight": 0.97
+			          }
+			        },
+			        {
+			          "poverty headcount relation": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.508
+			          }
+			        },
+			        {
+			          "poverty headcount percentage": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.508
+			          }
+			        },
+			        {
+			          "poverty headcount quotient": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.508
+			          }
+			        },
+			        {
+			          "poverty headcount relationship": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.508
+			          }
+			        },
+			        {
+			          "headcount relation": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.5
+			          }
+			        },
+			        {
+			          "headcount percentage": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.5
+			          }
+			        },
+			        {
+			          "headcount quotient": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.5
+			          }
+			        },
+			        {
+			          "headcount relationship": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.5
+			          }
+			        },
+			        {
+			          "poverty headcount proportion": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.492
+			          }
+			        },
+			        {
+			          "poverty headcount share": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.492
+			          }
+			        }
+			      ]
+			    },
+			    "wdi.gini_index": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Fact World Bank Data",
+			          "ConceptualProperty": "gini_index"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "gini index": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "gini_index": {
+			            "Type": "Noun",
+			            "State": "Generated",
+			            "Weight": 0.99
+			          }
+			        },
+			        {
+			          "gini directory": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.485
+			          }
+			        },
+			        {
+			          "gini catalogue": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.485
+			          }
+			        },
+			        {
+			          "gini catalog": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.485
+			          }
+			        },
+			        {
+			          "gini guide": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.485
+			          }
+			        },
+			        {
+			          "gini file": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.485
+			          }
+			        },
+			        {
+			          "gini key": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.485
+			          }
+			        },
+			        {
+			          "gini table": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.485
+			          }
+			        },
+			        {
+			          "gini manifestation": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.475
+			          }
+			        },
+			        {
+			          "gini pointer": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.475
+			          }
+			        },
+			        {
+			          "gini indication": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.475
+			          }
+			        }
+			      ]
+			    },
+			    "wdi.gdp_per_capita_growth": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Fact World Bank Data",
+			          "ConceptualProperty": "gdp_per_capita_growth"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "gdp per capita growth": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "gdp_per_capita_growth": {
+			            "Type": "Noun",
+			            "State": "Generated",
+			            "Weight": 0.99
+			          }
+			        }
+			      ]
+			    },
+			    "indicator": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Measure"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "indicator": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "pointer": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.491
+			          }
+			        },
+			        {
+			          "needle": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.476
+			          }
+			        },
+			        {
+			          "gage": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.476
+			          }
+			        },
+			        {
+			          "gauge": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.476
+			          }
+			        },
+			        {
+			          "dial": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.476
+			          }
+			        },
+			        {
+			          "meter": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.476
+			          }
+			        },
+			        {
+			          "marker": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.466
+			          }
+			        },
+			        {
+			          "statistic": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.466
+			          }
+			        },
+			        {
+			          "sign": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.452
+			          }
+			        },
+			        {
+			          "guide": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.452
+			          }
+			        }
+			      ]
+			    },
+			    "indicator.total_population": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Measure",
+			          "ConceptualProperty": "Total Population"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "total population": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "total_population": {
+			            "Type": "Noun",
+			            "State": "Generated",
+			            "Weight": 0.99
+			          }
+			        },
+			        {
+			          "population": {
+			            "State": "Generated",
+			            "Weight": 0.97
+			          }
+			        },
+			        {
+			          "aggregate population": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.582
+			          }
+			        },
+			        {
+			          "overall population": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.582
+			          }
+			        },
+			        {
+			          "total populace": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.5
+			          }
+			        },
+			        {
+			          "total person": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.5
+			          }
+			        },
+			        {
+			          "populace": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.491
+			          }
+			        },
+			        {
+			          "person": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.491
+			          }
+			        }
+			      ]
+			    },
+			    "indicator.poverty_headcount_ratio": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Measure",
+			          "ConceptualProperty": "Poverty Headcount Ratio"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "poverty headcount ratio": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "poverty_headcount_ratio": {
+			            "Type": "Noun",
+			            "State": "Generated",
+			            "Weight": 0.99
+			          }
+			        },
+			        {
+			          "ratio": {
+			            "State": "Generated",
+			            "Weight": 0.97
+			          }
+			        },
+			        {
+			          "headcount ratio": {
+			            "State": "Generated",
+			            "Weight": 0.97
+			          }
+			        },
+			        {
+			          "poverty headcount relation": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.508
+			          }
+			        },
+			        {
+			          "poverty headcount percentage": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.508
+			          }
+			        },
+			        {
+			          "poverty headcount quotient": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.508
+			          }
+			        },
+			        {
+			          "poverty headcount relationship": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.508
+			          }
+			        },
+			        {
+			          "headcount relation": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.5
+			          }
+			        },
+			        {
+			          "headcount percentage": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.5
+			          }
+			        },
+			        {
+			          "headcount quotient": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.5
+			          }
+			        },
+			        {
+			          "headcount relationship": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.5
+			          }
+			        },
+			        {
+			          "poverty headcount proportion": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.492
+			          }
+			        },
+			        {
+			          "poverty headcount share": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.492
+			          }
+			        }
+			      ]
+			    },
+			    "indicator.GDP_per_capita": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Measure",
+			          "ConceptualProperty": "GDP per Capita (PPP)"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "GDP per capita": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "indicator.GDP_per_capita_growth_02": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Measure",
+			          "ConceptualProperty": "GDP per Capita Growth Trend"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "GDP per capita growth 02": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "indicator.poverty_headcount_ratio_ignore_year": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Measure",
+			          "ConceptualProperty": "GDP per Capita (PPP) Trend"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "poverty headcount ratio ignore year": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "poverty_headcount_ratio_ignore_year": {
+			            "Type": "Noun",
+			            "State": "Generated",
+			            "Weight": 0.99
+			          }
+			        },
+			        {
+			          "poverty headcount ratio ignore yr": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.624
+			          }
+			        },
+			        {
+			          "poverty headcount relation ignore year": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.52
+			          }
+			        },
+			        {
+			          "poverty headcount percentage ignore year": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.52
+			          }
+			        },
+			        {
+			          "poverty headcount quotient ignore year": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.52
+			          }
+			        },
+			        {
+			          "poverty headcount relationship ignore year": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.52
+			          }
+			        },
+			        {
+			          "poverty headcount proportion ignore year": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.504
+			          }
+			        },
+			        {
+			          "poverty headcount share ignore year": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.504
+			          }
+			        },
+			        {
+			          "poverty headcount fraction ignore year": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.504
+			          }
+			        },
+			        {
+			          "poverty headcount part ignore year": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.504
+			          }
+			        }
+			      ]
+			    },
+			    "indicator.life_expectancy_year_highlight_color": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Measure",
+			          "ConceptualProperty": "GDP per Capita (PPP) Highlighted Color"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "life expectancy year highlight color": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "color": {
+			            "State": "Generated",
+			            "Weight": 0.97
+			          }
+			        },
+			        {
+			          "highlight color": {
+			            "State": "Generated",
+			            "Weight": 0.97
+			          }
+			        },
+			        {
+			          "year highlight color": {
+			            "State": "Generated",
+			            "Weight": 0.97
+			          }
+			        },
+			        {
+			          "expectancy year highlight color": {
+			            "State": "Generated",
+			            "Weight": 0.97
+			          }
+			        },
+			        {
+			          "life expectancy yr highlight color": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.624
+			          }
+			        },
+			        {
+			          "expectancy yr highlight color": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.617
+			          }
+			        },
+			        {
+			          "yr highlight color": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.609
+			          }
+			        },
+			        {
+			          "life expectancy year highlight hue": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.52
+			          }
+			        },
+			        {
+			          "expectancy year highlight hue": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.514
+			          }
+			        },
+			        {
+			          "year highlight hue": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.508
+			          }
+			        },
+			        {
+			          "life expectancy year highlight tint": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.504
+			          }
+			        },
+			        {
+			          "life expectancy year highlight shade": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.504
+			          }
+			        },
+			        {
+			          "life expectancy year highlight dye": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.504
+			          }
+			        },
+			        {
+			          "life expectancy year highlight paint": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.504
+			          }
+			        }
+			      ]
+			    },
+			    "indicator.GDP_per_capita_growth": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Measure",
+			          "ConceptualProperty": "GDP per Capita Growth (Annual %)"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "GDP per capita growth": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "indicator.global_GDP_per_capita": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Measure",
+			          "ConceptualProperty": "Global GDP per Capita (PPP)"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "global GDP per capita": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "extra_year": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Dim Year"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "extra year": {
+			            "State": "Generated",
+			            "Weight": 0.87
+			          }
+			        },
+			        {
+			          "extra yr": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.75
+			          }
+			        }
+			      ]
+			    },
+			    "extra_year.extra_year": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Dim Year",
+			          "ConceptualProperty": "year"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "extra year": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "year": {
+			            "State": "Generated",
+			            "Weight": 0.7
+			          }
+			        },
+			        {
+			          "extra yr": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.75
+			          }
+			        }
+			      ],
+			      "SemanticType": "Time"
+			    },
+			    "extra_year.extra_year_value": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Dim Year",
+			          "ConceptualProperty": "Year Value"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "extra year value": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "value": {
+			            "State": "Generated",
+			            "Weight": 0.97
+			          }
+			        },
+			        {
+			          "year value": {
+			            "State": "Generated",
+			            "Weight": 0.97
+			          }
+			        },
+			        {
+			          "extra yr value": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.609
+			          }
+			        },
+			        {
+			          "yr value": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.6
+			          }
+			        },
+			        {
+			          "extra year assessment": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.508
+			          }
+			        },
+			        {
+			          "year assessment": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.5
+			          }
+			        },
+			        {
+			          "extra year worth": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.492
+			          }
+			        },
+			        {
+			          "extra year price": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.492
+			          }
+			        },
+			        {
+			          "extra year cost": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.492
+			          }
+			        },
+			        {
+			          "extra year charge": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.492
+			          }
+			        },
+			        {
+			          "extra year rate": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.492
+			          }
+			        },
+			        {
+			          "assessment": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.491
+			          }
+			        }
+			      ]
+			    },
+			    "year": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Dim Year Selector"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "year": {
+			            "State": "Generated",
+			            "Weight": 0.87
+			          }
+			        },
+			        {
+			          "yr": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.736
+			          }
+			        }
+			      ]
+			    },
+			    "year.year": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Dim Year Selector",
+			          "ConceptualProperty": "Year"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "year": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "yr": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.736
+			          }
+			        }
+			      ]
+			    },
+			    "year.years_value": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Dim Year Selector",
+			          "ConceptualProperty": "Year Selector Value"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "years value": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "value": {
+			            "State": "Generated",
+			            "Weight": 0.97
+			          }
+			        },
+			        {
+			          "year assessment": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.5
+			          }
+			        },
+			        {
+			          "assessment": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.491
+			          }
+			        },
+			        {
+			          "year worth": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.485
+			          }
+			        },
+			        {
+			          "year price": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.485
+			          }
+			        },
+			        {
+			          "year cost": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.485
+			          }
+			        },
+			        {
+			          "year charge": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.485
+			          }
+			        },
+			        {
+			          "year rate": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.485
+			          }
+			        },
+			        {
+			          "worth": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.476
+			          }
+			        },
+			        {
+			          "price": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.476
+			          }
+			        },
+			        {
+			          "cost": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.476
+			          }
+			        }
+			      ]
+			    },
+			    "countries.measure_1": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Countries",
+			          "ConceptualProperty": "Measure 1"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Access to electricity": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "countries.measure_2": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Countries",
+			          "ConceptualProperty": "Measure 2"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "GDP per capita": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "countries.measure_3": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Countries",
+			          "ConceptualProperty": "Measure 3"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "CO₂ emissions per capita": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "countries.world": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Countries",
+			          "ConceptualProperty": "World"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Location": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    }
+			  },
+			  "Relationships": {
+			    "country_is_named_country_code": {
+			      "Binding": {
+			        "ConceptualEntity": "Dim Country"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "country": {
+			          "Target": {
+			            "Entity": "country"
+			          }
+			        },
+			        "country.country_code": {
+			          "Target": {
+			            "Entity": "country.country_code"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Name": {
+			            "Subject": {
+			              "Role": "country"
+			            },
+			            "Name": {
+			              "Role": "country.country_code"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "country_codes_are_names_IDs_of_countries"
+			        },
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "country"
+			            },
+			            "Object": {
+			              "Role": "country.country_code"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "countries_have_country_codes"
+			        }
+			      ]
+			    },
+			    "country_is_named_country_name": {
+			      "Binding": {
+			        "ConceptualEntity": "Dim Country"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "country": {
+			          "Target": {
+			            "Entity": "country"
+			          }
+			        },
+			        "country.country_name": {
+			          "Target": {
+			            "Entity": "country.country_name"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Name": {
+			            "Subject": {
+			              "Role": "country"
+			            },
+			            "Name": {
+			              "Role": "country.country_name"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "country_names_are_names_IDs_of_countries"
+			        },
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "country"
+			            },
+			            "Object": {
+			              "Role": "country.country_name"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "countries_have_country_names"
+			        }
+			      ]
+			    },
+			    "indicator_indicate": {
+			      "Binding": {
+			        "ConceptualEntity": "Measure"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "indicator": {
+			          "Target": {
+			            "Entity": "indicator"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Verb": {
+			            "Subject": {
+			              "Role": "indicator"
+			            },
+			            "Verbs": [
+			              {
+			                "indicate": {
+			                  "State": "Generated"
+			                }
+			              }
+			            ]
+			          },
+			          "State": "Generated",
+			          "Weight": 0.75,
+			          "ID": "indicators_indicate"
+			        }
+			      ]
+			    },
+			    "wdi_is_large": {
+			      "Binding": {
+			        "ConceptualEntity": "Fact World Bank Data"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "wdi": {
+			          "Target": {
+			            "Entity": "wdi"
+			          }
+			        },
+			        "wdi.total_population": {
+			          "Target": {
+			            "Entity": "wdi.total_population"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Adjective": {
+			            "Subject": {
+			              "Role": "wdi"
+			            },
+			            "Adjectives": [
+			              {
+			                "large": {
+			                  "State": "Generated"
+			                }
+			              },
+			              {
+			                "big": {
+			                  "State": "Generated"
+			                }
+			              },
+			              {
+			                "populated": {
+			                  "State": "Generated"
+			                }
+			              }
+			            ],
+			            "Antonyms": [
+			              {
+			                "small": {
+			                  "State": "Generated"
+			                }
+			              }
+			            ],
+			            "Measurement": {
+			              "Role": "wdi.total_population"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "total_population_indicates_how_large_wdis_are"
+			        },
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "wdi"
+			            },
+			            "Object": {
+			              "Role": "wdi.total_population"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "wdis_have_total_populations"
+			        }
+			      ]
+			    },
+			    "wdi_is_large1": {
+			      "Binding": {
+			        "ConceptualEntity": "Fact World Bank Data"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "wdi": {
+			          "Target": {
+			            "Entity": "wdi"
+			          }
+			        },
+			        "indicator.total_population": {
+			          "Target": {
+			            "Entity": "indicator.total_population"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Adjective": {
+			            "Subject": {
+			              "Role": "wdi"
+			            },
+			            "Adjectives": [
+			              {
+			                "large": {
+			                  "State": "Generated"
+			                }
+			              },
+			              {
+			                "big": {
+			                  "State": "Generated"
+			                }
+			              },
+			              {
+			                "populated": {
+			                  "State": "Generated"
+			                }
+			              }
+			            ],
+			            "Antonyms": [
+			              {
+			                "small": {
+			                  "State": "Generated"
+			                }
+			              }
+			            ],
+			            "Measurement": {
+			              "Role": "indicator.total_population"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "total_population_indicates_how_large_wdis_are1"
+			        },
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "wdi"
+			            },
+			            "Object": {
+			              "Role": "indicator.total_population"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "wdis_have_total_population"
+			        }
+			      ]
+			    },
+			    "country_in_region": {
+			      "Binding": {
+			        "ConceptualEntity": "Dim Country"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "country": {
+			          "Target": {
+			            "Entity": "country"
+			          }
+			        },
+			        "country.region": {
+			          "Target": {
+			            "Entity": "country.region"
+			          }
+			        }
+			      },
+			      "SemanticSlots": {
+			        "Where": {
+			          "Role": "country.region"
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Preposition": {
+			            "Subject": {
+			              "Role": "country"
+			            },
+			            "Prepositions": [
+			              {
+			                "in": {
+			                  "State": "Generated"
+			                }
+			              }
+			            ],
+			            "Object": {
+			              "Role": "country.region"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "countries_are_in_regions"
+			        }
+			      ]
+			    },
+			    "wdi_in_country": {
+			      "Binding": {
+			        "ConceptualEntity": "Fact World Bank Data"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "wdi": {
+			          "Target": {
+			            "Entity": "wdi"
+			          }
+			        },
+			        "wdi.country": {
+			          "Target": {
+			            "Entity": "wdi.country"
+			          }
+			        }
+			      },
+			      "SemanticSlots": {
+			        "Where": {
+			          "Role": "wdi.country"
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Preposition": {
+			            "Subject": {
+			              "Role": "wdi"
+			            },
+			            "Prepositions": [
+			              {
+			                "in": {
+			                  "State": "Generated"
+			                }
+			              }
+			            ],
+			            "Object": {
+			              "Role": "wdi.country"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "wdis_are_in_countries"
+			        }
+			      ]
+			    },
+			    "wdi_in_country1": {
+			      "Binding": {
+			        "ConceptualEntity": "Fact World Bank Data"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "wdi": {
+			          "Target": {
+			            "Entity": "wdi"
+			          }
+			        },
+			        "country": {
+			          "Target": {
+			            "Entity": "country"
+			          }
+			        }
+			      },
+			      "SemanticSlots": {
+			        "Where": {
+			          "Role": "country"
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Preposition": {
+			            "Subject": {
+			              "Role": "wdi"
+			            },
+			            "Prepositions": [
+			              {
+			                "in": {
+			                  "State": "Generated"
+			                }
+			              }
+			            ],
+			            "Object": {
+			              "Role": "country"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "wdis_are_in_countries1"
+			        }
+			      ]
+			    },
+			    "country_has_region": {
+			      "Binding": {
+			        "ConceptualEntity": "Dim Country"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "country": {
+			          "Target": {
+			            "Entity": "country"
+			          }
+			        },
+			        "country.region": {
+			          "Target": {
+			            "Entity": "country.region"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "country"
+			            },
+			            "Object": {
+			              "Role": "country.region"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "countries_have_regions"
+			        }
+			      ]
+			    },
+			    "country_has_income_level": {
+			      "Binding": {
+			        "ConceptualEntity": "Dim Country"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "country": {
+			          "Target": {
+			            "Entity": "country"
+			          }
+			        },
+			        "country.income_level": {
+			          "Target": {
+			            "Entity": "country.income_level"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "country"
+			            },
+			            "Object": {
+			              "Role": "country.income_level"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "countries_have_income_levels"
+			        }
+			      ]
+			    },
+			    "country_has_capital": {
+			      "Binding": {
+			        "ConceptualEntity": "Dim Country"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "country": {
+			          "Target": {
+			            "Entity": "country"
+			          }
+			        },
+			        "country.capital": {
+			          "Target": {
+			            "Entity": "country.capital"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "country"
+			            },
+			            "Object": {
+			              "Role": "country.capital"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "countries_have_capitals"
+			        }
+			      ]
+			    },
+			    "country_has_longitude": {
+			      "Binding": {
+			        "ConceptualEntity": "Dim Country"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "country": {
+			          "Target": {
+			            "Entity": "country"
+			          }
+			        },
+			        "country.longitude": {
+			          "Target": {
+			            "Entity": "country.longitude"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "country"
+			            },
+			            "Object": {
+			              "Role": "country.longitude"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "countries_have_longitudes"
+			        }
+			      ]
+			    },
+			    "country_has_latitude": {
+			      "Binding": {
+			        "ConceptualEntity": "Dim Country"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "country": {
+			          "Target": {
+			            "Entity": "country"
+			          }
+			        },
+			        "country.latitude": {
+			          "Target": {
+			            "Entity": "country.latitude"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "country"
+			            },
+			            "Object": {
+			              "Role": "country.latitude"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "countries_have_latitudes"
+			        }
+			      ]
+			    },
+			    "wdi_has_country": {
+			      "Binding": {
+			        "ConceptualEntity": "Fact World Bank Data"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "wdi": {
+			          "Target": {
+			            "Entity": "wdi"
+			          }
+			        },
+			        "wdi.country": {
+			          "Target": {
+			            "Entity": "wdi.country"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "wdi"
+			            },
+			            "Object": {
+			              "Role": "wdi.country"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "wdis_have_countries"
+			        }
+			      ]
+			    },
+			    "wdi_has_gdp_per_capita": {
+			      "Binding": {
+			        "ConceptualEntity": "Fact World Bank Data"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "wdi": {
+			          "Target": {
+			            "Entity": "wdi"
+			          }
+			        },
+			        "wdi.gdp_per_capita": {
+			          "Target": {
+			            "Entity": "wdi.gdp_per_capita"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "wdi"
+			            },
+			            "Object": {
+			              "Role": "wdi.gdp_per_capita"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "wdis_have_gdp_per_capita"
+			        }
+			      ]
+			    },
+			    "wdi_has_poverty_headcount_ratio": {
+			      "Binding": {
+			        "ConceptualEntity": "Fact World Bank Data"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "wdi": {
+			          "Target": {
+			            "Entity": "wdi"
+			          }
+			        },
+			        "wdi.poverty_headcount_ratio": {
+			          "Target": {
+			            "Entity": "wdi.poverty_headcount_ratio"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "wdi"
+			            },
+			            "Object": {
+			              "Role": "wdi.poverty_headcount_ratio"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "wdis_have_poverty_headcount_ratios"
+			        }
+			      ]
+			    },
+			    "wdi_has_gini_index": {
+			      "Binding": {
+			        "ConceptualEntity": "Fact World Bank Data"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "wdi": {
+			          "Target": {
+			            "Entity": "wdi"
+			          }
+			        },
+			        "wdi.gini_index": {
+			          "Target": {
+			            "Entity": "wdi.gini_index"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "wdi"
+			            },
+			            "Object": {
+			              "Role": "wdi.gini_index"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "wdis_have_gini_indices"
+			        }
+			      ]
+			    },
+			    "wdi_has_gdp_per_capita_growth": {
+			      "Binding": {
+			        "ConceptualEntity": "Fact World Bank Data"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "wdi": {
+			          "Target": {
+			            "Entity": "wdi"
+			          }
+			        },
+			        "wdi.gdp_per_capita_growth": {
+			          "Target": {
+			            "Entity": "wdi.gdp_per_capita_growth"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "wdi"
+			            },
+			            "Object": {
+			              "Role": "wdi.gdp_per_capita_growth"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "wdis_have_gdp_per_capita_growth"
+			        }
+			      ]
+			    },
+			    "wdi_has_indicator_poverty_headcount_ratio": {
+			      "Binding": {
+			        "ConceptualEntity": "Fact World Bank Data"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "wdi": {
+			          "Target": {
+			            "Entity": "wdi"
+			          }
+			        },
+			        "indicator.poverty_headcount_ratio": {
+			          "Target": {
+			            "Entity": "indicator.poverty_headcount_ratio"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "wdi"
+			            },
+			            "Object": {
+			              "Role": "indicator.poverty_headcount_ratio"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "wdis_have_poverty_headcount_ratio"
+			        }
+			      ]
+			    },
+			    "wdi_has_indicator_GDP_per_capita": {
+			      "Binding": {
+			        "ConceptualEntity": "Fact World Bank Data"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "wdi": {
+			          "Target": {
+			            "Entity": "wdi"
+			          }
+			        },
+			        "indicator.GDP_per_capita": {
+			          "Target": {
+			            "Entity": "indicator.GDP_per_capita"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "wdi"
+			            },
+			            "Object": {
+			              "Role": "indicator.GDP_per_capita"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "wdis_have_GDP_per_capita"
+			        }
+			      ]
+			    },
+			    "wdi_has_indicator_GDP_per_capita_growth_02": {
+			      "Binding": {
+			        "ConceptualEntity": "Fact World Bank Data"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "wdi": {
+			          "Target": {
+			            "Entity": "wdi"
+			          }
+			        },
+			        "indicator.GDP_per_capita_growth_02": {
+			          "Target": {
+			            "Entity": "indicator.GDP_per_capita_growth_02"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "wdi"
+			            },
+			            "Object": {
+			              "Role": "indicator.GDP_per_capita_growth_02"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "wdis_have_GDP_per_capita_growth_02"
+			        }
+			      ]
+			    },
+			    "wdi_has_indicator_poverty_headcount_ratio_ignore_year": {
+			      "Binding": {
+			        "ConceptualEntity": "Fact World Bank Data"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "wdi": {
+			          "Target": {
+			            "Entity": "wdi"
+			          }
+			        },
+			        "indicator.poverty_headcount_ratio_ignore_year": {
+			          "Target": {
+			            "Entity": "indicator.poverty_headcount_ratio_ignore_year"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "wdi"
+			            },
+			            "Object": {
+			              "Role": "indicator.poverty_headcount_ratio_ignore_year"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "wdis_have_poverty_headcount_ratio_ignore_year"
+			        }
+			      ]
+			    },
+			    "extra_year_has_indicator_life_expectancy_year_highlight_color": {
+			      "Binding": {
+			        "ConceptualEntity": "Dim Year"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "extra_year": {
+			          "Target": {
+			            "Entity": "extra_year"
+			          }
+			        },
+			        "indicator.life_expectancy_year_highlight_color": {
+			          "Target": {
+			            "Entity": "indicator.life_expectancy_year_highlight_color"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "extra_year"
+			            },
+			            "Object": {
+			              "Role": "indicator.life_expectancy_year_highlight_color"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "extra_years_have_life_expectancy_year_highlight_color"
+			        }
+			      ]
+			    },
+			    "year_has_indicator_life_expectancy_year_highlight_color": {
+			      "Binding": {
+			        "ConceptualEntity": "Dim Year Selector"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "year": {
+			          "Target": {
+			            "Entity": "year"
+			          }
+			        },
+			        "indicator.life_expectancy_year_highlight_color": {
+			          "Target": {
+			            "Entity": "indicator.life_expectancy_year_highlight_color"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "year"
+			            },
+			            "Object": {
+			              "Role": "indicator.life_expectancy_year_highlight_color"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "years_have_life_expectancy_year_highlight_color"
+			        }
+			      ]
+			    },
+			    "wdi_has_indicator_life_expectancy_year_highlight_color": {
+			      "Binding": {
+			        "ConceptualEntity": "Fact World Bank Data"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "wdi": {
+			          "Target": {
+			            "Entity": "wdi"
+			          }
+			        },
+			        "indicator.life_expectancy_year_highlight_color": {
+			          "Target": {
+			            "Entity": "indicator.life_expectancy_year_highlight_color"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "wdi"
+			            },
+			            "Object": {
+			              "Role": "indicator.life_expectancy_year_highlight_color"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "wdis_have_life_expectancy_year_highlight_color"
+			        }
+			      ]
+			    },
+			    "wdi_has_indicator_GDP_per_capita_growth": {
+			      "Binding": {
+			        "ConceptualEntity": "Fact World Bank Data"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "wdi": {
+			          "Target": {
+			            "Entity": "wdi"
+			          }
+			        },
+			        "indicator.GDP_per_capita_growth": {
+			          "Target": {
+			            "Entity": "indicator.GDP_per_capita_growth"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "wdi"
+			            },
+			            "Object": {
+			              "Role": "indicator.GDP_per_capita_growth"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "wdis_have_GDP_per_capita_growth"
+			        }
+			      ]
+			    },
+			    "wdi_has_indicator_global_GDP_per_capita": {
+			      "Binding": {
+			        "ConceptualEntity": "Fact World Bank Data"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "wdi": {
+			          "Target": {
+			            "Entity": "wdi"
+			          }
+			        },
+			        "indicator.global_GDP_per_capita": {
+			          "Target": {
+			            "Entity": "indicator.global_GDP_per_capita"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "wdi"
+			            },
+			            "Object": {
+			              "Role": "indicator.global_GDP_per_capita"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "wdis_have_global_GDP_per_capita"
+			        }
+			      ]
+			    },
+			    "extra_year_has_extra_year": {
+			      "Binding": {
+			        "ConceptualEntity": "Dim Year"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "extra_year": {
+			          "Target": {
+			            "Entity": "extra_year"
+			          }
+			        },
+			        "extra_year.extra_year": {
+			          "Target": {
+			            "Entity": "extra_year.extra_year"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "extra_year"
+			            },
+			            "Object": {
+			              "Role": "extra_year.extra_year"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "extra_years_have_extra_years"
+			        }
+			      ]
+			    },
+			    "extra_year_has_extra_year_value": {
+			      "Binding": {
+			        "ConceptualEntity": "Dim Year"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "extra_year": {
+			          "Target": {
+			            "Entity": "extra_year"
+			          }
+			        },
+			        "extra_year.extra_year_value": {
+			          "Target": {
+			            "Entity": "extra_year.extra_year_value"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "extra_year"
+			            },
+			            "Object": {
+			              "Role": "extra_year.extra_year_value"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "extra_years_have_extra_year_value"
+			        }
+			      ]
+			    },
+			    "year_has_year": {
+			      "Binding": {
+			        "ConceptualEntity": "Dim Year Selector"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "year": {
+			          "Target": {
+			            "Entity": "year"
+			          }
+			        },
+			        "year.year": {
+			          "Target": {
+			            "Entity": "year.year"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "year"
+			            },
+			            "Object": {
+			              "Role": "year.year"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "years_have_years"
+			        }
+			      ]
+			    },
+			    "year_has_years_value": {
+			      "Binding": {
+			        "ConceptualEntity": "Dim Year Selector"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "year": {
+			          "Target": {
+			            "Entity": "year"
+			          }
+			        },
+			        "year.years_value": {
+			          "Target": {
+			            "Entity": "year.years_value"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "year"
+			            },
+			            "Object": {
+			              "Role": "year.years_value"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "years_have_years_value"
+			        }
+			      ]
+			    },
+			    "wdi_has_country1": {
+			      "Binding": {
+			        "ConceptualEntity": "Fact World Bank Data"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "wdi": {
+			          "Target": {
+			            "Entity": "wdi"
+			          }
+			        },
+			        "country": {
+			          "Target": {
+			            "Entity": "country"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "wdi"
+			            },
+			            "Object": {
+			              "Role": "country"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "wdis_have_countries1"
+			        },
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "country"
+			            },
+			            "Object": {
+			              "Role": "wdi"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "countries_have_wdis"
+			        }
+			      ]
+			    },
+			    "wdi_has_extra_year": {
+			      "Binding": {
+			        "ConceptualEntity": "Fact World Bank Data"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "wdi": {
+			          "Target": {
+			            "Entity": "wdi"
+			          }
+			        },
+			        "extra_year": {
+			          "Target": {
+			            "Entity": "extra_year"
+			          },
+			          "Nouns": [
+			            {
+			              "year": {
+			                "State": "Generated"
+			              }
+			            }
+			          ]
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "wdi"
+			            },
+			            "Object": {
+			              "Role": "extra_year"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "wdis_have_extra_years"
+			        },
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "extra_year"
+			            },
+			            "Object": {
+			              "Role": "wdi"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "extra_years_have_wdis"
+			        }
+			      ]
+			    },
+			    "wdi_has_year": {
+			      "Binding": {
+			        "ConceptualEntity": "Fact World Bank Data"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "wdi": {
+			          "Target": {
+			            "Entity": "wdi"
+			          }
+			        },
+			        "year": {
+			          "Target": {
+			            "Entity": "year"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "wdi"
+			            },
+			            "Object": {
+			              "Role": "year"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "wdis_have_years"
+			        },
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "year"
+			            },
+			            "Object": {
+			              "Role": "wdi"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "years_have_wdis"
+			        }
+			      ]
+			    }
+			  },
+			  "Agents": {
+			    "Internal": {
+			      "Version": "1.1.0"
+			    }
+			  }
+			}
+		contentType: json
+

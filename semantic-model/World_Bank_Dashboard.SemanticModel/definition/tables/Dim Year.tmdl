@@ -1,0 +1,26 @@
+table 'Dim Year'
+	lineageTag: 94b9b981-bd85-43b2-af45-be31ef280d90
+
+	measure 'Year Value' = SELECTEDVALUE('Dim Year'[year])
+		formatString: 0
+		lineageTag: 637b167c-a465-41c9-8d58-f84447466db8
+
+	column year
+		formatString: 0
+		lineageTag: 6b9aebc5-98a6-45a2-a6b6-6bfdbb55b725
+		summarizeBy: none
+		sourceColumn: [Value]
+
+		extendedProperty ParameterMetadata =
+				{
+				  "version": 0
+				}
+
+		annotation SummarizationSetBy = User
+
+	partition 'Dim Year' = calculated
+		mode: import
+		source = GENERATESERIES(2000, 2024, 1)
+
+	annotation PBI_Id = 922d76236e0840c28cbdff0b342bc1b4
+

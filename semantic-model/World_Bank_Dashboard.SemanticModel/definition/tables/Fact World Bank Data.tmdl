@@ -1,0 +1,101 @@
+table 'Fact World Bank Data'
+	lineageTag: 0018615d-7bf5-4680-b28a-84c6686edcf2
+
+	column country_code
+		dataType: string
+		lineageTag: c6877533-39f7-4115-b116-710d055acc93
+		summarizeBy: none
+		sourceColumn: country_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column country
+		dataType: string
+		lineageTag: ec6d191e-016b-4c72-b006-e0148a1d227e
+		summarizeBy: none
+		sourceColumn: country
+
+		annotation SummarizationSetBy = Automatic
+
+	column year
+		dataType: int64
+		formatString: 0
+		lineageTag: 17d7d2c1-5ccb-4675-9920-2436ff807a73
+		summarizeBy: none
+		sourceColumn: year
+
+		annotation SummarizationSetBy = Automatic
+
+	column gdp_per_capita
+		dataType: double
+		lineageTag: 2066dee5-b353-451f-9028-9827da77216c
+		summarizeBy: sum
+		sourceColumn: gdp_per_capita
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column total_population
+		dataType: double
+		lineageTag: 3b40e226-7f4a-45cb-8f3c-c18526b440b1
+		summarizeBy: sum
+		sourceColumn: total_population
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column poverty_headcount_ratio
+		dataType: double
+		lineageTag: 7ca1d0b3-3980-4bfc-a805-ad9b48cf1c80
+		summarizeBy: sum
+		sourceColumn: poverty_headcount_ratio
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column gini_index
+		dataType: double
+		lineageTag: 4a13e927-9fb6-4fea-8cf2-0b117c6479f5
+		summarizeBy: sum
+		sourceColumn: gini_index
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column gdp_per_capita_growth
+		dataType: double
+		lineageTag: fe1f205d-1458-4e25-b300-cbcbb8764ab7
+		summarizeBy: sum
+		sourceColumn: gdp_per_capita_growth
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column gdp
+		dataType: double
+		lineageTag: b9839eca-b78e-43d8-9310-4860370bcd3c
+		summarizeBy: sum
+		sourceColumn: gdp
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	partition 'Fact World Bank Data' = m
+		mode: import
+		source =
+				let
+				    Origen = Parquet.Document(File.Contents("C:\Users\USUARIO\Documents\Projects\worldbank_data_project\data\gold\indicators\part-0.parquet"), [Compression=null, LegacyColumnNameEncoding=false, MaxDepth=null]),
+				    #"Filas filtradas" = Table.SelectRows(Origen, each true)
+				in
+				    #"Filas filtradas"
+
+	annotation PBI_ResultType = Table
+
+	annotation PBI_NavigationStepName = Navegación
+

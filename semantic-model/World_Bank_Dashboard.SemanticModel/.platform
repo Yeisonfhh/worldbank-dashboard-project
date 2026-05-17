@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "SemanticModel",
+    "displayName": "World_Bank_Dashboard"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "b6417375-0314-4f04-a775-402061c0c3f3"
+  }
+}
