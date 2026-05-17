@@ -71,16 +71,6 @@ table Measure
 		formatString: 0.00\ %;-0.00\ %;0.00\ %
 		lineageTag: b924ec27-4b1d-480c-8be2-691320434aab
 
-	measure 'GDP per Capita (PPP) Trend' =
-			
-			CALCULATE(
-			[GDP per Capita (PPP)],
-			    REMOVEFILTERS('Dim Year Selector'[Year])
-			)
-		lineageTag: 7c640557-5741-4146-aa78-863902bac9db
-
-		annotation PBI_FormatHint = {"isGeneralNumber":true}
-
 	measure 'GDP per Capita (PPP) Highlighted Color' =
 			
 			SWITCH(
@@ -315,7 +305,7 @@ table Measure
 		lineageTag: e64ea290-bf7c-4488-82c8-90583df23ab0
 		dataCategory: ImageUrl
 
-	measure 'GDP per Capita (PPP) Trend''' =
+	measure 'GDP per Capita (PPP) Trend' =
 			
 			VAR _CountryToUse =
 			    IF(

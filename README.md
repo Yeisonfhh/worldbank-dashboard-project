@@ -22,47 +22,81 @@ To demonstrate best practices in **Analytics Engineering and BI development**, t
 
 ```text
 worldbank-dashboard/
-├── data/       # Static processed data (Excel/CSV) - Local source of truth
-├── dataset/    # ⚙️ SOURCE CODE (.pbip): Semantic model and design in plain text for Git
-├── report/     # 🚀 DELIVERABLE (.pbix): Compiled file ready for end-users
-├── dax/        # Code repository for extracted complex metrics
-└── assets/     # Visual resources (JSON Themes, backgrounds, images)
+├── data/           # Static processed data (Excel/CSV) - Local source of truth
+├── semantic-model/ # ⚙️ SOURCE CODE (.pbip): Semantic model and design in plain text for Git
+├── report/         # 🚀 DELIVERABLE (.pbix): Compiled file ready for end-users
+├── dax/            # Code repository for extracted complex metrics
+└── assets/         # Visual resources (JSON Themes, backgrounds, images)
 ```
 
 ---
 
 ## 💡 Key Features & Visual Analysis
 
-- **Dynamic Data Storytelling:** A smart narrative panel that automatically updates key metrics based on user filters — for example, highlighting that in 2022, global income levels averaged **20,453 international dollars (PPP)** across **217 Economies** and a population of over **7,966.3 M**.
+**Dynamic Data Storytelling:** A smart narrative panel that automatically updates key metrics based on user filters — for example, highlighting that in 2022, global income levels averaged **20,453 international dollars (PPP)** across **217 Economies** and a population of over **7,966.3 M**.
 
-- **Advanced Geospatial Mapping (Globe Map):** An orthographic map illustrating *Global GDP per Capita by Economy*. The custom blue color scale instantly highlights the concentration of wealth across hemispheres.
+**Advanced Geospatial Mapping (Globe Map):** An orthographic map illustrating Global GDP per Capita by Economy. The custom blue color scale instantly highlights the concentration of wealth across hemispheres.
 
-- **Interactive Filtering System:**
-  - A **Regional Coverage** slicer to isolate specific continents (e.g., East Asia & Pacific, Sub-Saharan Africa).
-  - A dynamic **Timeline Slider** at the bottom, enabling seamless cross-filtering from 2000 to 2024.
+**Interactive Filtering System:**
+- A **Regional Coverage** slicer to isolate specific continents (e.g., East Asia & Pacific, Sub-Saharan Africa).
+- A dynamic **Timeline Slider** at the bottom, enabling seamless cross-filtering from 2000 to 2024.
 
-- **Historical Impact & Volatility:** The *Evolution of Global GDP per Capita Growth* chart visually flags negative growth periods (e.g., the red bar during the **2020 global recession**) versus recovery phases (e.g., **3.6% growth in 2022**).
+**Historical Impact & Volatility:** The *Evolution of Global GDP per Capita Growth* chart visually flags negative growth periods (e.g., the red bar during the 2020 global recession) versus recovery phases (e.g., 3.6% growth in 2022).
 
-- **Regional Decomposition Matrix:** A detailed tabular view contrasting **Population Share** (% of World Population) against **GDP Share** (% of Global GDP), clearly exposing structural economic gaps.
+**Regional Decomposition Matrix:** A detailed tabular view contrasting **Population Share** (% of World Population) against **GDP Share** (% of Global GDP), clearly exposing structural economic gaps.
 
-- **Relative Benchmarking:** A dual-line chart (*GDP per Capita Relative to the Global Average*) evaluating a specific country's performance — e.g., Singapore — against the overarching Global GDP Trend.
+**Relative Benchmarking:** A dual-line chart (*GDP per Capita Relative to the Global Average*) evaluating a specific country's performance — e.g., Singapore — against the overarching Global GDP Trend.
 
 ---
 
 ## ⚙️ Technical Specifications
 
-### Data Modeling & Transformation
+### Data Modeling & Architecture
 
-- **Schema:** Dimensional modeling optimized for the VertiPaq engine.
-- **Relative Connection:** To ensure portability, the model is fed from the static file located in the `/data/` folder.
+```erDiagram
+    DIM_COUNTRY ||--o{ FACT_WORLD_BANK_DATA : "1 : N"
+    DIM_YEAR ||--o{ FACT_WORLD_BANK_DATA : "1 : N"
 
-### DAX & Time Intelligence
+    DIM_COUNTRY {
+        string country_code PK "Primary Key"
+        string country_name
+        string region
+    }
 
-Advanced measures were implemented for calculating:
+    DIM_YEAR {
+        int year PK "Primary Key"
+    }
 
-- Year-over-Year (YoY) Growth percentages.
-- Relative percentage contributions (`DIVIDE` combined with `CALCULATE` to modify the filter context).
-- Dynamic titles and text cards based on user selection (`SELECTEDVALUE`).
+    FACT_WORLD_BANK_DATA {
+        string country_code FK
+        int year FK
+        float gdp
+        float gdp_per_capita
+        float total_population
+    }
+
+    DIM_YEAR_SELECTOR {
+        int Year "Disconnected (Parameter)"
+    }
+
+    MEASURES {
+        DAX core_metrics "Virtual Table"
+    }
+```
+
+**Star Schema:** Optimized dimensional modeling separating contextual dimensions (`Dim Country`, `Dim Year`) from the quantitative fact table (`Fact World Bank Data`) for peak VertiPaq engine performance.
+
+**Disconnected Tables for Benchmarking:** Implementation of a detached parameter table (`Dim Year Selector`) to allow dynamic benchmark comparisons without disrupting the primary historical filter context.
+
+### Advanced DAX Implementation
+
+The semantic model features enterprise-grade DAX, moving beyond basic aggregations:
+
+- **Macroeconomic Weighted Averages:** Utilizing `SUMX` and `DIVIDE` to calculate accurate regional/global GDP and Poverty ratios weighted by population size, avoiding statistical distortions from simple averages.
+
+- **Context Transition & Filter Overrides:** Extensive use of `CALCULATE` combined with `REMOVEFILTERS` to build dynamic baselines (e.g., preserving historical trends while filtering specific years).
+
+- **DAX-Driven UI/UX:** Dynamic injection of HEX color codes (`SWITCH`) to highlight specific data points (e.g., negative growth years) and intelligent number formatting (conditionally displaying `'M'` for millions or `'K'` for thousands based on filter context).
 
 > 📝 The code for the main measures is documented in the `/dax/` folder.
 
@@ -83,23 +117,23 @@ If you want to open the dashboard directly to test its interactivity and design:
 
 1. Clone or download this repository to your local machine.
 2. Navigate to the `report/` folder.
-3. Open the `World Bank_Delivery.pbix` file with **Power BI Desktop**. The model and charts will load automatically.
+3. Open the `World_Bank_Delivery.pbix` file with **Power BI Desktop**. The model and charts will load automatically.
 
 ### Option 2: Architecture & Code Audit
 
 If you want to inspect the semantic model structure and version control setup:
 
 1. Clone the repository.
-2. Navigate to the `dataset/` folder.
+2. Navigate to the `semantic-model/` folder.
 3. Open the `.pbip` (Power BI Project) file. Explore the natively generated `.SemanticModel` and `.Report` folders to review code serialization in JSON and TMDL formats.
 
 ---
 
 ## ✉️ Contact
 
-**[Your Name / Last Name]**  
+**[Tu Nombre / Tu Apellido]**<br>
 Data Analyst / Analytics Engineer
 
-[![LinkedIn](https://img.shields.io/badge/LinkedIn-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](#)
-[![Portfolio](https://img.shields.io/badge/Web_Portfolio-000000?style=for-the-badge&logo=githubpages&logoColor=white)](#)
-[![Email](https://img.shields.io/badge/Email-EA4335?style=for-the-badge&logo=gmail&logoColor=white)](#)
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](TU_LINK_DE_LINKEDIN)
+[![Portfolio](https://img.shields.io/badge/Web_Portfolio-000000?style=for-the-badge&logo=githubpages&logoColor=white)](TU_LINK_DEL_PORTAFOLIO)
+[![Email](https://img.shields.io/badge/Email-EA4335?style=for-the-badge&logo=gmail&logoColor=white)](mailto:TU_CORREO@gmail.com)

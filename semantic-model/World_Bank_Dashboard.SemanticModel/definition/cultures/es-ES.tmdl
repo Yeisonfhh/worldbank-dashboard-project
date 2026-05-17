@@ -1545,119 +1545,6 @@ cultureInfo es-ES
 			        }
 			      ]
 			    },
-			    "indicator.poverty_headcount_ratio_ignore_year": {
-			      "Definition": {
-			        "Binding": {
-			          "ConceptualEntity": "Measure",
-			          "ConceptualProperty": "GDP per Capita (PPP) Trend"
-			        }
-			      },
-			      "State": "Generated",
-			      "Terms": [
-			        {
-			          "poverty headcount ratio ignore year": {
-			            "State": "Generated"
-			          }
-			        },
-			        {
-			          "poverty_headcount_ratio_ignore_year": {
-			            "Type": "Noun",
-			            "State": "Generated",
-			            "Weight": 0.99
-			          }
-			        },
-			        {
-			          "poverty headcount ratio ignore yr": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.624
-			          }
-			        },
-			        {
-			          "poverty headcount relation ignore year": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.52
-			          }
-			        },
-			        {
-			          "poverty headcount percentage ignore year": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.52
-			          }
-			        },
-			        {
-			          "poverty headcount quotient ignore year": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.52
-			          }
-			        },
-			        {
-			          "poverty headcount relationship ignore year": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.52
-			          }
-			        },
-			        {
-			          "poverty headcount proportion ignore year": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.504
-			          }
-			        },
-			        {
-			          "poverty headcount share ignore year": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.504
-			          }
-			        },
-			        {
-			          "poverty headcount fraction ignore year": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.504
-			          }
-			        },
-			        {
-			          "poverty headcount part ignore year": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.504
-			          }
-			        }
-			      ]
-			    },
 			    "indicator.life_expectancy_year_highlight_color": {
 			      "Definition": {
 			        "Binding": {
@@ -2198,19 +2085,7 @@ cultureInfo es-ES
 			          "ConceptualProperty": "Measure 1"
 			        }
 			      },
-			      "State": "Generated",
-			      "Terms": [
-			        {
-			          "Access to electricity": {
-			            "State": "Suggested",
-			            "Source": {
-			              "Type": "External",
-			              "Agent": "PowerBI.VisualColumnRename"
-			            },
-			            "Weight": 0.9
-			          }
-			        }
-			      ]
+			      "State": "Generated"
 			    },
 			    "countries.measure_2": {
 			      "Definition": {
@@ -2219,19 +2094,7 @@ cultureInfo es-ES
 			          "ConceptualProperty": "Measure 2"
 			        }
 			      },
-			      "State": "Generated",
-			      "Terms": [
-			        {
-			          "GDP per capita": {
-			            "State": "Suggested",
-			            "Source": {
-			              "Type": "External",
-			              "Agent": "PowerBI.VisualColumnRename"
-			            },
-			            "Weight": 0.9
-			          }
-			        }
-			      ]
+			      "State": "Generated"
 			    },
 			    "countries.measure_3": {
 			      "Definition": {
@@ -2240,19 +2103,7 @@ cultureInfo es-ES
 			          "ConceptualProperty": "Measure 3"
 			        }
 			      },
-			      "State": "Generated",
-			      "Terms": [
-			        {
-			          "CO₂ emissions per capita": {
-			            "State": "Suggested",
-			            "Source": {
-			              "Type": "External",
-			              "Agent": "PowerBI.VisualColumnRename"
-			            },
-			            "Weight": 0.9
-			          }
-			        }
-			      ]
+			      "State": "Generated"
 			    },
 			    "countries.world": {
 			      "Definition": {
@@ -2261,19 +2112,7 @@ cultureInfo es-ES
 			          "ConceptualProperty": "World"
 			        }
 			      },
-			      "State": "Generated",
-			      "Terms": [
-			        {
-			          "Location": {
-			            "State": "Suggested",
-			            "Source": {
-			              "Type": "External",
-			              "Agent": "PowerBI.VisualColumnRename"
-			            },
-			            "Weight": 0.9
-			          }
-			        }
-			      ]
+			      "State": "Generated"
 			    }
 			  },
 			  "Relationships": {
