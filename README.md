@@ -59,38 +59,31 @@ worldbank-dashboard/
 ## ⚙️ Technical Specifications
 
 ### Data Model — Star Schema
-
+ 
 ```mermaid
 erDiagram
     DIM_COUNTRY       ||--o{ FACT_WORLD_BANK_DATA : "filters"
     DIM_YEAR          ||--o{ FACT_WORLD_BANK_DATA : "filters"
     DIM_YEAR_SELECTOR  |o--o{ FACT_WORLD_BANK_DATA : "DAX benchmark filter"
-
+ 
     DIM_COUNTRY {
-        Text          country_code   PK
-        Text          country_name
-        Text          capital
-        Text          income_level
-        Text          region
-        DecimalNumber latitude
-        DecimalNumber longitude
+        Text        country_code PK
+        Text        income_level
+        Text        region
+        Text        more_fields
     }
-
+ 
     DIM_YEAR {
         WholeNumber year PK
     }
-
+ 
     FACT_WORLD_BANK_DATA {
-        Text          country
-        Text          country_code      FK
-        WholeNumber   year              FK
-        DecimalNumber gdp
+        Text          country_code FK
+        WholeNumber   year FK
         DecimalNumber gdp_per_capita
-        DecimalNumber gini_index
-        DecimalNumber poverty_headcount
-        WholeNumber   total_population
+        Text          more_fields
     }
-
+ 
     DIM_YEAR_SELECTOR {
         WholeNumber year
     }
