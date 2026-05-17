@@ -52,35 +52,40 @@ worldbank-dashboard/
 ## ⚙️ Technical Specifications
 
 ### Data Modeling & Architecture
-
-```erDiagram
-    DIM_COUNTRY ||--o{ FACT_WORLD_BANK_DATA : "1 : N"
-    DIM_YEAR ||--o{ FACT_WORLD_BANK_DATA : "1 : N"
-
+ 
+```mermaid
+erDiagram
+    DIM_COUNTRY       ||--o{ FACT_WORLD_BANK_DATA : "filters"
+    DIM_YEAR          ||--o{ FACT_WORLD_BANK_DATA : "filters"
+    DIM_YEAR_SELECTOR  |o--o{ FACT_WORLD_BANK_DATA : "DAX benchmark filter"
+ 
     DIM_COUNTRY {
-        string country_code PK "Primary Key"
-        string country_name
-        string region
+        Text    country_code   PK
+        Text    country_name
+        Text    capital
+        Text    income_level
+        Text    region
+        Decimal latitude
+        Decimal longitude
     }
-
+ 
     DIM_YEAR {
-        int year PK "Primary Key"
+        WholeNumber year PK
     }
-
+ 
     FACT_WORLD_BANK_DATA {
-        string country_code FK
-        int year FK
-        float gdp
-        float gdp_per_capita
-        float total_population
+        Text          country
+        Text          country_code      FK
+        WholeNumber   year              FK
+        DecimalNumber gdp
+        DecimalNumber gdp_per_capita
+        DecimalNumber gini_index
+        DecimalNumber poverty_headcount
+        WholeNumber   total_population
     }
-
+ 
     DIM_YEAR_SELECTOR {
-        int Year "Disconnected (Parameter)"
-    }
-
-    MEASURES {
-        DAX core_metrics "Virtual Table"
+        WholeNumber year
     }
 ```
 
