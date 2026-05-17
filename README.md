@@ -1,3 +1,5 @@
+<div align="center">
+
 # 🌍 World Bank: Global Economic Development & Income Distribution
 
 ### *Exploring two decades of global GDP, income inequality, and demographic shifts*
@@ -7,7 +9,6 @@
 ![Data Source](https://img.shields.io/badge/Data-World_Bank_WDI-00843D?style=for-the-badge&logo=worldhealthorganization&logoColor=white)
 ![Status](https://img.shields.io/badge/Status-Completed-2EA44F?style=for-the-badge)
 
-<div align="center">
 <br>
 
 <img src="assets/dashboard_screenshot.png" alt="Perspectivas Mundiales — Dashboard Preview" width="100%">
@@ -61,16 +62,16 @@ worldbank-dashboard/
 
 ```mermaid
 erDiagram
-    DIM_COUNTRY ||--o{ FACT_WORLD_BANK_DATA : "filters"
-    DIM_YEAR ||--o{ FACT_WORLD_BANK_DATA : "filters"
-    DIM_YEAR_SELECTOR |o--o{ FACT_WORLD_BANK_DATA : "DAX benchmark filter"
+    DIM_COUNTRY       ||--o{ FACT_WORLD_BANK_DATA : "filters"
+    DIM_YEAR          ||--o{ FACT_WORLD_BANK_DATA : "filters"
+    DIM_YEAR_SELECTOR  |o--o{ FACT_WORLD_BANK_DATA : "DAX benchmark filter"
 
     DIM_COUNTRY {
-        Text country_code PK
-        Text country_name
-        Text capital
-        Text income_level
-        Text region
+        Text          country_code   PK
+        Text          country_name
+        Text          capital
+        Text          income_level
+        Text          region
         DecimalNumber latitude
         DecimalNumber longitude
     }
@@ -80,14 +81,14 @@ erDiagram
     }
 
     FACT_WORLD_BANK_DATA {
-        Text country
-        Text country_code FK
-        WholeNumber year FK
+        Text          country
+        Text          country_code      FK
+        WholeNumber   year              FK
         DecimalNumber gdp
         DecimalNumber gdp_per_capita
         DecimalNumber gini_index
         DecimalNumber poverty_headcount
-        WholeNumber total_population
+        WholeNumber   total_population
     }
 
     DIM_YEAR_SELECTOR {
@@ -137,7 +138,7 @@ For interactivity and design exploration:
 git clone https://github.com/your-username/worldbank-dashboard.git
 
 # 2. Open in Power BI Desktop
-report/World_Bank_Delivery.pbix
+# Navigate to report/ and open World_Bank_Delivery.pbix
 ```
 
 ### 🔬 Option 2 — Architecture & Code Audit
@@ -145,8 +146,8 @@ report/World_Bank_Delivery.pbix
 For semantic model inspection and version control review:
 
 ```bash
-# Open the .pbip project file
-semantic-model/  →  .SemanticModel  /  .Report   (JSON + TMDL)
+# Navigate to semantic-model/
+# Explore .SemanticModel and .Report folders (JSON + TMDL)
 ```
 
 ---
