@@ -11,7 +11,7 @@
 
 <br>
 
-<img src="assets/dashboard_screenshot.jpg" alt="World Bank Dashboard Preview" width="100%">
+<img src="assets/dashboard_screenshot.png" alt="World Bank Dashboard Preview" width="100%">
 
 </div>
 
@@ -92,7 +92,7 @@ erDiagram
 
 ---
 
-### Advanced DAX Implementation
+### ⚡ Advanced DAX Implementation
 
 The semantic model leverages advanced DAX patterns focused on query performance and dynamic context transition:
 
@@ -109,33 +109,54 @@ The semantic model leverages advanced DAX patterns focused on query performance 
 
 ---
 
-## 🚀 How to Run & Audit
+## 🚀 Getting Started
 
 ### 📋 Prerequisites
 
-> **Power BI Desktop:** May 2023 release or newer is strictly required to open and compile `.pbip` source files.
+| Requirement | Details |
+|---|---|
+| **Power BI Desktop** | May 2023 or newer — required to open `.pbip` source files |
+| **Git** | Any recent version — required to clone the repository |
+| **VS Code** *(optional)* | Recommended for TMDL and DAX syntax highlighting |
 
-### ⚡ Option 1 — Quick View
+---
 
-For UI/UX interactivity and business insight exploration:
+### ⚡ Option 1 — Run the Dashboard
+
+> **Audience:** Anyone exploring the UI, KPIs, and business insights.
 
 ```bash
 # 1. Clone the repository
 git clone https://github.com/your-username/worldbank-dashboard.git
 
-# 2. Open in Power BI Desktop
-# Navigate to report/ and open World_Bank_Delivery.pbix
+# 2. Navigate to the report folder and open in Power BI Desktop
+cd worldbank-dashboard/report
+# Open: World_Bank_Delivery.pbix
 ```
 
-### 🔬 Option 2 — Architecture & Code Audit
+---
 
-For peer review of the Semantic Model and TMDL structuring:
+### 🔬 Option 2 — Audit the Semantic Model
+
+> **Audience:** Analytics Engineers and technical reviewers inspecting the data model, DAX measures, and TMDL structure.
 
 ```bash
-# Navigate to semantic-model/
-# Explore .SemanticModel and .Report folders
-# VS Code recommended for TMDL syntax highlighting
+# 1. Clone the repository
+git clone https://github.com/your-username/worldbank-dashboard.git
+
+# 2. Open the semantic-model/ folder in VS Code
+cd worldbank-dashboard/semantic-model
+
+# Structure to review:
+# ├── .SemanticModel/   → TMDL table definitions, relationships, and column types
+# └── .Report/          → JSON visual layout and configuration
 ```
+
+| Folder | Contents |
+|---|---|
+| `.SemanticModel/` | Table definitions, relationships, column types (TMDL) |
+| `.Report/` | Visual layout, page config, theme references (JSON) |
+| `dax/` | Extracted and documented DAX measure patterns |
 
 ---
 
