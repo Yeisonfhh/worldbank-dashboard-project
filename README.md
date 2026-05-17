@@ -11,7 +11,7 @@
 
 <br>
 
-<img src="assets/dashboard_screenshot.png" alt="World Bank Dashboard Preview" width="100%">
+<img src="assets/dashboard_screenshot.jpg" alt="World Bank Dashboard Preview" width="100%">
 
 </div>
 
@@ -24,6 +24,19 @@ This project demonstrates the design, optimization, and deployment of a robust *
 Engineered using official data from the **World Bank — World Development Indicators (WDI)**, the data model is optimized for the VertiPaq engine, enabling seamless exploration of **217 economies (2000–2024)**. All financial figures are dynamically adjusted for **Purchasing Power Parity** *(PPP, constant 2021 international dollars)*.
 
 > **Analytics Engineering Focus:** Decoupled semantic model, version control readiness (CI/CD) via `.pbip`, DAX optimization, and structural data governance.
+
+---
+
+## 💡 Key Features
+
+| Feature | Description |
+|---|---|
+| 🌐 **Globe Map** | Orthographic choropleth visualizing GDP per capita concentration across hemispheres |
+| 🧠 **Smart Narrative** | Auto-updating KPI panel that adapts to every filter selection |
+| 📉 **Growth Timeline** | Bar chart flagging recession years (red) vs. recovery phases (green) |
+| 🔢 **Regional Matrix** | Population Share vs. GDP Share — exposing structural economic gaps |
+| 📈 **Benchmarking** | Dual-line chart comparing any country's trajectory against the global average |
+| 🕹️ **Timeline Slider** | Cross-filter control spanning 2000–2024 |
 
 ---
 
