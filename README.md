@@ -80,39 +80,12 @@ worldbank-dashboard/
 
 ### 🗂️ Data Model — Star Schema
 
-```mermaid
-erDiagram
+The semantic layer follows a strict **Star Schema** optimized for the VertiPaq engine:
 
-    DIM_COUNTRY         ||--o{ FACT_WORLD_BANK_DATA : "1:N  ·  filters"
-    DIM_YEAR            ||--o{ FACT_WORLD_BANK_DATA : "1:N  ·  filters"
-    DIM_YEAR_SELECTOR    |o--o{ FACT_WORLD_BANK_DATA : "disconnected  ·  DAX logic"
+- **Strict Star Schema** — contextual dimensions (`Dim Country`, `Dim Year`) are fully decoupled from the quantitative fact table, minimizing memory footprint and maximizing VertiPaq compression.
+- **Disconnected Parameter Table** — `Dim Year Selector` operates purely via DAX without physical relationships, enabling complex historical trend comparisons without polluting the primary filter context.
 
-    DIM_COUNTRY {
-        Text          country_code    PK
-        Text          income_level
-        Text          region
-        Text          more_fields
-    }
-
-    DIM_YEAR {
-        WholeNumber   year            PK
-    }
-
-    FACT_WORLD_BANK_DATA {
-        Text          country_code    FK
-        WholeNumber   year            FK
-        DecimalNumber gdp_per_capita
-        Text          more_fields
-    }
-
-    DIM_YEAR_SELECTOR {
-        WholeNumber   year
-    }
-```
-
-**Strict Star Schema** — contextual dimensions (`Dim Country`, `Dim Year`) are fully decoupled from the quantitative fact table, minimizing memory footprint and maximizing VertiPaq compression.
-
-**Disconnected Parameter Table** — `Dim Year Selector` operates purely via DAX without physical relationships, enabling complex historical trend comparisons without polluting the primary filter context.
+> 📐 Full data model documentation, schema diagram, and field definitions → [`docs/data-model.md`](./docs/data-model.md)
 
 ---
 
