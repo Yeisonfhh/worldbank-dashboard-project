@@ -81,41 +81,33 @@ worldbank-dashboard/
 ### 🗂️ Data Model — Star Schema
 
 ```mermaid
-graph TD
-    COUNTRY["<b>DIM_COUNTRY</b> 🌍
-    ─────────────────
-    🔑 country_code · PK
-    · income_level
-    · region
-    · ···"]
+erDiagram
 
-    YEAR["<b>DIM_YEAR</b> 📅
-    ─────────────────
-    🔑 year · PK"]
+    DIM_COUNTRY         ||--o{ FACT_WORLD_BANK_DATA : "1:N  ·  filters"
+    DIM_YEAR            ||--o{ FACT_WORLD_BANK_DATA : "1:N  ·  filters"
+    DIM_YEAR_SELECTOR    |o--o{ FACT_WORLD_BANK_DATA : "disconnected  ·  DAX logic"
 
-    SELECTOR["<b>DIM_YEAR_SELECTOR</b> 🎚️
-    ─────────────────
-    · year
-    ⚡ Disconnected Parameter"]
+    DIM_COUNTRY {
+        Text          country_code    PK
+        Text          income_level
+        Text          region
+        Text          more_fields
+    }
 
-    FACT["<b>FACT_WORLD_BANK_DATA</b> 📊
-    ─────────────────────────
-    🔗 country_code · FK
-    🔗 year · FK
-    · gdp_per_capita
-    · gini_index
-    · poverty_headcount
-    · total_population
-    · ···"]
+    DIM_YEAR {
+        WholeNumber   year            PK
+    }
 
-    COUNTRY -- "1:N · Filters" --> FACT
-    YEAR    -- "1:N · Filters" --> FACT
-    SELECTOR-. "DAX logic only" .-> FACT
+    FACT_WORLD_BANK_DATA {
+        Text          country_code    FK
+        WholeNumber   year            FK
+        DecimalNumber gdp_per_capita
+        Text          more_fields
+    }
 
-    style FACT     fill:#0F2C59,stroke:#4A90D9,stroke-width:2px,color:#ffffff
-    style COUNTRY  fill:#1a3a5c,stroke:#4A90D9,stroke-width:1.5px,color:#ffffff
-    style YEAR     fill:#1a3a5c,stroke:#4A90D9,stroke-width:1.5px,color:#ffffff
-    style SELECTOR fill:#1a2a3a,stroke:#6c8ebf,stroke-width:1.5px,stroke-dasharray:5 5,color:#a0b4c8
+    DIM_YEAR_SELECTOR {
+        WholeNumber   year
+    }
 ```
 
 **Strict Star Schema** — contextual dimensions (`Dim Country`, `Dim Year`) are fully decoupled from the quantitative fact table, minimizing memory footprint and maximizing VertiPaq compression.
