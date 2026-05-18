@@ -1,10 +1,10 @@
-# 📐 Data Model Documentation
+# 🧩 Data Model Documentation
 
 > Part of the [World Bank: Global Economic Development & Income Distribution](../README.md) project.
 
 ---
 
-## Architecture — Star Schema
+## 🏗️ Architecture — Star Schema
 
 The semantic layer is structured as a **strict Star Schema**, optimized for the VertiPaq compression engine in Power BI. Contextual dimensions are fully decoupled from the quantitative fact table to minimize memory footprint and maximize query performance.
 
@@ -30,7 +30,7 @@ erDiagram
     }
 
     FACT_WORLD_BANK_DATA {
-        Text          country         
+        Text          country
         Text          country_code    FK
         WholeNumber   year            FK
         DecimalNumber gdp
@@ -47,9 +47,9 @@ erDiagram
 
 ---
 
-## Tables
+## 📋 Tables
 
-### `DIM_COUNTRY` — Country Dimension
+### 🌍 `DIM_COUNTRY` — Country Dimension
 
 Contextual dimension containing geographic, demographic, and classification attributes for each economy.
 
@@ -65,7 +65,7 @@ Contextual dimension containing geographic, demographic, and classification attr
 
 ---
 
-### `DIM_YEAR` — Year Dimension
+### 📅 `DIM_YEAR` — Year Dimension
 
 Simple date dimension enabling time-based filtering and cross-filtering across the report.
 
@@ -75,7 +75,7 @@ Simple date dimension enabling time-based filtering and cross-filtering across t
 
 ---
 
-### `FACT_WORLD_BANK_DATA` — Fact Table
+### 📊 `FACT_WORLD_BANK_DATA` — Fact Table
 
 Central quantitative table containing all economic and demographic indicators per country per year.
 
@@ -92,7 +92,7 @@ Central quantitative table containing all economic and demographic indicators pe
 
 ---
 
-### `DIM_YEAR_SELECTOR` — Disconnected Parameter Table
+### ⚡ `DIM_YEAR_SELECTOR` — Disconnected Parameter Table
 
 A parameter table with **no active physical relationship** to the fact table. It operates exclusively via DAX to enable benchmark comparisons (e.g. a selected reference year vs. the full historical trend) without polluting the primary filter context.
 
@@ -104,7 +104,7 @@ A parameter table with **no active physical relationship** to the fact table. It
 
 ---
 
-## Relationships
+## 🔗 Relationships
 
 | From | To | Cardinality | Type | Purpose |
 |---|---|---|---|---|
@@ -114,7 +114,7 @@ A parameter table with **no active physical relationship** to the fact table. It
 
 ---
 
-## Data Source
+## 🌐 Data Source
 
 All data is sourced from the **[World Bank Open Data](https://data.worldbank.org/)** portal — World Development Indicators (WDI).
 
