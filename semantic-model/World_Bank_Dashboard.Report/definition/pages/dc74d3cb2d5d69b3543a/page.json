@@ -13,7 +13,7 @@
           "Column": {
             "Expression": {
               "SourceRef": {
-                "Entity": "Dim Year Selector"
+                "Entity": "Dim Reference Year"
               }
             },
             "Property": "Year"

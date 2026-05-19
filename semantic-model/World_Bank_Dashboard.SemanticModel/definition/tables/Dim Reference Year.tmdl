@@ -1,7 +1,7 @@
-table 'Dim Year Selector'
+table 'Dim Reference Year'
 	lineageTag: 9e729ffb-fba4-4736-b6c1-d29dd6a46319
 
-	measure 'Year Selector Value' = SELECTEDVALUE('Dim Year Selector'[Year])
+	measure 'Year Selector Value' = SELECTEDVALUE('Dim Reference Year'[Year])
 		formatString: 0
 		lineageTag: 730a8350-4ae1-4039-86b4-e63e6d0ad5e1
 
@@ -18,7 +18,7 @@ table 'Dim Year Selector'
 
 		annotation SummarizationSetBy = User
 
-	partition 'Dim Year Selector' = calculated
+	partition 'Dim Reference Year' = calculated
 		mode: import
 		source = GENERATESERIES(2000, 2024, 1)
 

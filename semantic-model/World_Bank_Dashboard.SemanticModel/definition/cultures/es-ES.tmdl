@@ -1907,7 +1907,7 @@ cultureInfo es-ES
 			    "year": {
 			      "Definition": {
 			        "Binding": {
-			          "ConceptualEntity": "Dim Year Selector"
+			          "ConceptualEntity": "Dim Reference Year"
 			        }
 			      },
 			      "State": "Generated",
@@ -1933,7 +1933,7 @@ cultureInfo es-ES
 			    "year.year": {
 			      "Definition": {
 			        "Binding": {
-			          "ConceptualEntity": "Dim Year Selector",
+			          "ConceptualEntity": "Dim Reference Year",
 			          "ConceptualProperty": "Year"
 			        }
 			      },
@@ -1959,7 +1959,7 @@ cultureInfo es-ES
 			    "year.years_value": {
 			      "Definition": {
 			        "Binding": {
-			          "ConceptualEntity": "Dim Year Selector",
+			          "ConceptualEntity": "Dim Reference Year",
 			          "ConceptualProperty": "Year Selector Value"
 			        }
 			      },
@@ -3012,7 +3012,7 @@ cultureInfo es-ES
 			    },
 			    "year_has_indicator_life_expectancy_year_highlight_color": {
 			      "Binding": {
-			        "ConceptualEntity": "Dim Year Selector"
+			        "ConceptualEntity": "Dim Reference Year"
 			      },
 			      "State": "Generated",
 			      "Roles": {
@@ -3210,7 +3210,7 @@ cultureInfo es-ES
 			    },
 			    "year_has_year": {
 			      "Binding": {
-			        "ConceptualEntity": "Dim Year Selector"
+			        "ConceptualEntity": "Dim Reference Year"
 			      },
 			      "State": "Generated",
 			      "Roles": {
@@ -3243,7 +3243,7 @@ cultureInfo es-ES
 			    },
 			    "year_has_years_value": {
 			      "Binding": {
-			        "ConceptualEntity": "Dim Year Selector"
+			        "ConceptualEntity": "Dim Reference Year"
 			      },
 			      "State": "Generated",
 			      "Roles": {

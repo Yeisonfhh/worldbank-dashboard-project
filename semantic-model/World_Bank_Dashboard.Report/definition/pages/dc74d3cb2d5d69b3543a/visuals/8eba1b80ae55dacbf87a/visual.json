@@ -358,7 +358,7 @@
           "Column": {
             "Expression": {
               "SourceRef": {
-                "Entity": "Dim Year Selector"
+                "Entity": "Dim Reference Year"
               }
             },
             "Property": "Year"
@@ -370,7 +370,7 @@
           "From": [
             {
               "Name": "y",
-              "Entity": "Dim Year Selector",
+              "Entity": "Dim Reference Year",
               "Type": 0
             }
           ],

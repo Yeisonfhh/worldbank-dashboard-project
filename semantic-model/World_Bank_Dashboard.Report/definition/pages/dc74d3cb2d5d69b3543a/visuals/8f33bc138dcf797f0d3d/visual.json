@@ -292,7 +292,7 @@
                             "From": [
                               {
                                 "Name": "y",
-                                "Entity": "Dim Year Selector",
+                                "Entity": "Dim Reference Year",
                                 "Type": 0
                               }
                             ],

@@ -11,7 +11,7 @@
 
 <br>
 
-<img src="assets/dashboard_screenshot.png" alt="World Bank Dashboard Preview" width="100%">
+<img src="assets/dashboard_screenshot.jpg" alt="World Bank Dashboard Preview" width="100%">
 
 </div>
 
@@ -43,16 +43,16 @@ Engineered using official data from the **World Bank — World Development Indic
 | Feature | Description |
 |---|---|
 | 🌐 **Globe Map** | Orthographic choropleth visualizing GDP per capita concentration across hemispheres |
-| 🧠 **Smart Narrative** | Auto-updating KPI panel driven by DAX measures like `[Global Income Position]` and `[Economy in Focus]` to adapt contextually to every filter |
-| 📉 **Growth Timeline** | Bar chart flagging recession years vs. recovery phases, powered by dynamic HEX color injection via `[GDP per Capita (PPP) Highlighted Color]` |
-| 🔬 **Regional Matrix** | Population Share vs. GDP Share — exposing structural economic gaps globally |
-| 🏅 **Benchmarking** | Dual-line chart using a disconnected slicer to compare any country's trajectory against the global average without breaking the filter context |
+| 🧠 **Smart Narrative** | Auto-updating KPI panel driven by `[Global Income Position]` and `[Economy in Focus]` — adapts contextually to every filter |
+| 📉 **Growth Timeline** | Bar chart flagging recession years vs. recovery phases via dynamic HEX color injection — `[GDP per Capita (PPP) Highlighted Color]` |
+| 🔬 **Regional Matrix** | `[Population Share]` vs. `[GDP Share]` — exposing structural economic gaps at regional granularity |
+| 🏅 **Benchmarking** | Dual-line chart powered by `[GDP per Capita (PPP) Trend]` — compares any country or region against the global average without breaking the filter context |
 
 ---
 
 ## 🎯 Business Value & Key Insights
 
-A well-architected semantic layer must seamlessly answer complex business questions. The model's dynamic DAX architecture reveals the following macro-economic trends:
+A well-architected semantic layer must seamlessly answer complex business questions. The model's dynamic DAX architecture surfaces the following macro-economic trends:
 
 **The Global Divide:** In 2024, despite a global average income of **$21,621 (PPP)**, the model exposes extreme structural gaps: North America generates **16.4% of global GDP** with only **4.7% of the population**, while South Asia holds **20.7% of the population** but accounts for only **9.4% of the GDP**.
 
@@ -62,7 +62,7 @@ A well-architected semantic layer must seamlessly answer complex business questi
 
 ## 🏗️ Project Architecture & Version Control
 
-Moving away from monolithic `.pbix` files, this repository utilizes the **Power BI Project (`.pbip`)** structure. This code-first approach stores the semantic model and report design in plain text (TMDL/JSON), enabling Git version control, branch collaboration, and CI/CD pipeline integration.
+Moving away from monolithic `.pbix` files, this repository uses the **Power BI Project (`.pbip`)** structure — a code-first approach that serializes the semantic model and report design into plain text (TMDL/JSON), enabling Git version control, branch collaboration, and CI/CD pipeline integration.
 
 ```text
 worldbank-dashboard/
@@ -70,7 +70,7 @@ worldbank-dashboard/
 ├── 📁 data/             # Static processed data (Excel/CSV) — local source of truth
 ├── 📁 semantic-model/   # ⚙️  SEMANTIC LAYER (.pbip): TMDL definition of tables, relations, and DAX
 ├── 📁 report/           # 📊 PRESENTATION LAYER: JSON layout and visual configurations
-├── 📁 dax/              # Code documentation for complex analytical patterns
+├── 📁 dax/              # Documented DAX measure patterns for peer review
 └── 📁 assets/           # Custom JSON themes and structural background templates
 ```
 
@@ -82,23 +82,23 @@ worldbank-dashboard/
 
 The semantic layer follows a strict **Star Schema** optimized for the VertiPaq engine:
 
-- **Strict Star Schema** — contextual dimensions (`Dim Country`, `Dim Year`) are fully decoupled from the quantitative fact table, minimizing memory footprint and maximizing VertiPaq compression.
-- **Disconnected Parameter Table** — `Dim Year Selector` operates purely via DAX without physical relationships, enabling complex historical trend comparisons without polluting the primary filter context.
+- **Decoupled Dimensions** — `Dim Country` and `Dim Year` are fully separated from the fact table, minimizing memory footprint and maximizing VertiPaq compression ratios.
+- **Disconnected Parameter Table** — `Dim Reference Year` has no active physical relationship. It operates exclusively via `TREATAS` and `SELECTEDVALUE` in DAX, enabling point-in-time benchmarking without polluting the primary filter context.
 
-> 🧩 Full data model documentation, schema diagram, and field definitions → [`docs/data-model.md`](./docs/data-model.md)
+> 🗂️ Full schema diagram, table definitions, field glossary, and relationship map → [`docs/data-model.md`](./docs/data-model.md)
 
 ---
 
 ### ⚡ Advanced DAX Implementation
 
-The semantic layer is built with robust DAX patterns that prioritize mathematical accuracy, dynamic context transition, and a seamless user experience.
+The semantic layer is built on three core DAX engineering patterns:
 
 **① Population-Weighted Macroeconomic Aggregations**
 
-To prevent statistical distortions from simple averages, core metrics like `[GDP per Capita (PPP)]` and `[Poverty Headcount Ratio]` utilize a `SUMX` iterator divided by total population — ensuring that massive economies properly weight regional and global aggregates.
+Core KPIs like `[GDP per Capita (PPP)]` and `[Poverty Headcount Ratio]` use a population-weighted `SUMX` iterator to prevent the statistical distortions caused by simple averages — ensuring that large economies carry their proper weight in regional and global aggregates.
 
 ```dax
-// Core aggregation pattern used in the model
+-- Pattern: Population-weighted average (used across all core KPIs)
 DIVIDE(
     SUMX(
         FILTER(
@@ -107,30 +107,37 @@ DIVIDE(
         ),
         'Fact World Bank Data'[gdp_per_capita] * 'Fact World Bank Data'[total_population]
     ),
-    SUMX( ... )
+    SUMX(
+        FILTER(
+            'Fact World Bank Data',
+            NOT ISBLANK( 'Fact World Bank Data'[gdp_per_capita] )
+        ),
+        'Fact World Bank Data'[total_population]
+    )
 )
 ```
 
-**② Dynamic Benchmarking & Context Overrides**
+**② Virtual Filter Injection via `TREATAS`**
 
-The model dynamically identifies the top performer in a selected region using `TOPN` (`[Country with Highest GDP per Capita]`). It also uses `CALCULATE` combined with `REMOVEFILTERS('Dim Year Selector')` to maintain historical background trend lines even when strict year filters are applied via slicers.
+Instead of relying on an active model relationship, all base KPIs inject the selected reference year as a virtual filter context using `TREATAS(VALUES('Dim Reference Year'[Year]), 'Dim Year'[year])`. This pattern decouples the UI control from the physical model, preserving the historical trend lines used in background charts.
 
 **③ Context-Aware Formatting & UI/UX**
 
-Instead of relying on native Power BI conditional formatting, the UI is programmatically driven by DAX:
+The UI is programmatically driven by DAX — no native conditional formatting panels:
 
-- **Dynamic Scaling** — `[World Population Display]` evaluates `HASONEVALUE('Dim Country'[country_name])` via a `SWITCH` statement to format numbers as `M` (millions) or `K` (thousands) depending on the filter context granularity.
-- **Smart Highlighting** — `[GDP per Capita (PPP) Highlighted Color]` injects HEX codes (e.g., `#B22222` for recession years, `#118DFF` for selected years) directly into visual elements based on the interaction between growth trends and the disconnected slicer.
+- **Dynamic Scaling** — `[World Population Display]` uses `HASONEVALUE` + `SWITCH` to format values as `M` (millions) or `K` (thousands) based on filter granularity.
+- **Smart Highlighting** — `[GDP per Capita (PPP) Highlighted Color]` injects `#B22222` (recession), `#118DFF` (selected year), `#FFB3B3` / `#CFE7FF` (contextual) directly into visual color bindings.
+- **Dynamic Labels** — `[Economy in Focus]`, `[Benchmark Economy]`, and `[Economic Scope Label]` adapt narrative text to the active filter context (country / region / global).
 
-> 📁 All complex measure code is extracted and documented in the [`/dax`](./dax/) folder for peer review.
+> 📁 All measure code is extracted and documented in the [`/dax`](./dax/) folder for peer review.
 
 ---
 
 ### 🎨 UI/UX Design
 
 - **Color System** — custom JSON theme aligned with World Bank corporate identity; blue-dominant, minimal chrome.
-- **Layout** — structured grid guiding the eye from the global map → regional breakdown → country benchmarking.
-- **Typography** — editorial hierarchy separating KPI values, labels, and narrative text for fast scanning.
+- **Layout** — structured grid guiding the eye: global map → regional breakdown → country benchmarking.
+- **Typography** — editorial hierarchy separating KPI values, axis labels, and narrative text for fast scanning.
 
 ---
 
@@ -189,17 +196,17 @@ cd worldbank-dashboard/semantic-model
 
 This project is continuously evolving. The following features and architectural improvements are planned for future releases:
 
-- [ ] **Automated CI/CD Pipeline** — Implement GitHub Actions to automate the deployment of the `.pbip` semantic model directly to a Power BI Premium workspace upon merging to the `main` branch.
-- [ ] **Data Governance & RLS** — Integrate dynamic Row-Level Security (RLS) to restrict regional data access based on user Active Directory roles.
-- [ ] **Incremental Refresh** — Configure incremental refresh policies on `FACT_WORLD_BANK_DATA` to optimize VertiPaq memory usage as new yearly data is ingested.
-- [ ] **Predictive Analytics** — Incorporate a Python-based forecasting model (via Power BI integration) to project GDP per capita trends for the next 5 years based on historical volatility.
+- [ ] **Automated CI/CD Pipeline** — GitHub Actions to deploy the `.pbip` semantic model directly to a Power BI Premium workspace on merge to `main`.
+- [ ] **Data Governance & RLS** — Dynamic Row-Level Security (RLS) restricting regional data access based on Active Directory user roles.
+- [ ] **Incremental Refresh** — Incremental refresh policies on `FACT_WORLD_BANK_DATA` to optimize VertiPaq memory as new yearly WDI data is ingested.
+- [ ] **Predictive Analytics** — Python-based GDP per capita forecasting model (via Power BI integration) projecting 5-year trends based on historical volatility.
 
 ---
 
 ## 🤝 Acknowledgments & Data Source
 
-- Data provided by the **[World Bank Open Data](https://data.worldbank.org/)** portal.
-- Indicators: **GDP per capita, PPP** *(constant 2021 international $)* & **Population totals**.
+- Data provided by the **[World Bank Open Data](https://data.worldbank.org/)** portal — World Development Indicators (WDI).
+- Indicators: **GDP per capita, PPP** *(constant 2021 international $)*, **Gini index**, **Poverty headcount ratio**, and **Population totals**.
 
 ---
 

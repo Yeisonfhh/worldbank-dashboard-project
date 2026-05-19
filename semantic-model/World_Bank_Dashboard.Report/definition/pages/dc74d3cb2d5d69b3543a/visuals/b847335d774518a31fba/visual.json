@@ -20,7 +20,7 @@
                 "Column": {
                   "Expression": {
                     "SourceRef": {
-                      "Entity": "Dim Year Selector"
+                      "Entity": "Dim Reference Year"
                     }
                   },
                   "Property": "Year"
@@ -41,7 +41,7 @@
             "numericStart": {
               "expr": {
                 "Literal": {
-                  "Value": "2022D"
+                  "Value": "2024D"
                 }
               }
             },
@@ -77,8 +77,8 @@
                 "Version": 2,
                 "From": [
                   {
-                    "Name": "y",
-                    "Entity": "Dim Year Selector",
+                    "Name": "d",
+                    "Entity": "Dim Reference Year",
                     "Type": 0
                   }
                 ],
@@ -91,7 +91,7 @@
                           "Column": {
                             "Expression": {
                               "SourceRef": {
-                                "Source": "y"
+                                "Source": "d"
                               }
                             },
                             "Property": "Year"
@@ -99,7 +99,7 @@
                         },
                         "Right": {
                           "Literal": {
-                            "Value": "2022D"
+                            "Value": "2024D"
                           }
                         }
                       }

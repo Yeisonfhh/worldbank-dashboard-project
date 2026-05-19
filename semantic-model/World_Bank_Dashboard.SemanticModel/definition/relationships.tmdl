@@ -6,7 +6,3 @@ relationship e706f622-80e8-7f08-a89d-34ff26f52a8c
 	fromColumn: 'Fact World Bank Data'.year
 	toColumn: 'Dim Year'.year
 
-relationship 630d393f-fdcf-ac90-8d84-0c654b6b6653
-	fromColumn: 'Fact World Bank Data'.year
-	toColumn: 'Dim Year Selector'.Year
-

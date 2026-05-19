@@ -10,13 +10,13 @@ annotation __PBI_TimeIntelligenceEnabled = 1
 
 annotation PBI_QueryOrder = ["Dim Country","Fact World Bank Data","Measure"]
 
-annotation PBI_ProTooling = ["DevMode"]
+annotation PBI_ProTooling = ["DevMode","DaxQueryView_Desktop"]
 
 ref table 'Dim Country'
 ref table 'Fact World Bank Data'
 ref table Measure
 ref table 'Dim Year'
-ref table 'Dim Year Selector'
+ref table 'Dim Reference Year'
 
 ref cultureInfo es-ES
 
