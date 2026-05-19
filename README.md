@@ -2,7 +2,7 @@
 
 # 🌍 World Bank: Global Economic Development & Income Distribution
 
-### *Analytics Engineering Portfolio: Building a scalable semantic layer to explore two decades of global GDP and demographic shifts*
+### *Building a scalable semantic layer to explore two decades of global GDP and demographic shifts*
 
 ![Power BI](https://img.shields.io/badge/Power_BI-F2C811?style=for-the-badge&logo=powerbi&logoColor=black)
 ![Architecture](https://img.shields.io/badge/Architecture-PBIP_Source_Control-0F2C59?style=for-the-badge&logo=git&logoColor=white)

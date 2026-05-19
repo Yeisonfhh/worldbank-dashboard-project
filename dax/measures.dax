@@ -1,0 +1,357 @@
+-- ============================================================
+-- World Bank: Global Economic Development & Income Distribution
+-- DAX Measures — Semantic Layer
+-- ============================================================
+-- Author   : Yeison
+-- Model    : Fact World Bank Data · Star Schema
+-- Updated  : 2024
+-- Docs     : docs/data-model.md
+-- ============================================================
+
+
+-- ============================================================
+-- 1. BASE KPIs — Virtual Filter Injection via TREATAS
+--    All measures inject the selected reference year as a
+--    virtual filter using TREATAS, keeping DIM_YEAR free
+--    to drive historical trend lines in background charts.
+-- ============================================================
+
+MEASURE 'Measure'[Total Population] =
+CALCULATE(
+    SUM( 'Fact World Bank Data'[total_population] ),
+    TREATAS( VALUES( 'Dim Reference Year'[Year] ), 'Dim Year'[year] )
+)
+
+-- ─────────────────────────────────────────────────────────────
+
+MEASURE 'Measure'[GDP (PPP)] =
+CALCULATE(
+    SUM( 'Fact World Bank Data'[gdp] ),
+    TREATAS( VALUES( 'Dim Reference Year'[Year] ), 'Dim Year'[year] )
+)
+
+-- ─────────────────────────────────────────────────────────────
+
+MEASURE 'Measure'[Total Economies] =
+CALCULATE(
+    DISTINCTCOUNT( 'Fact World Bank Data'[country_code] ),
+    TREATAS( VALUES( 'Dim Reference Year'[Year] ), 'Dim Year'[year] )
+)
+
+-- ─────────────────────────────────────────────────────────────
+-- Pattern: Population-weighted average
+--   · Single country  → AVERAGE (no weighting needed)
+--   · Region / Global → SUMX weighted by total_population
+--   Applied to: GDP per Capita, Poverty Headcount, Growth Rate
+-- ─────────────────────────────────────────────────────────────
+
+MEASURE 'Measure'[GDP per Capita (PPP)] =
+CALCULATE(
+    IF(
+        HASONEVALUE( 'Fact World Bank Data'[country] ),
+        AVERAGE( 'Fact World Bank Data'[gdp_per_capita] ),
+        DIVIDE(
+            SUMX(
+                FILTER( 'Fact World Bank Data', NOT ISBLANK( 'Fact World Bank Data'[gdp_per_capita] ) ),
+                'Fact World Bank Data'[gdp_per_capita] * 'Fact World Bank Data'[total_population]
+            ),
+            SUMX(
+                FILTER( 'Fact World Bank Data', NOT ISBLANK( 'Fact World Bank Data'[gdp_per_capita] ) ),
+                'Fact World Bank Data'[total_population]
+            )
+        )
+    ),
+    TREATAS( VALUES( 'Dim Reference Year'[Year] ), 'Dim Year'[year] )
+)
+
+-- ─────────────────────────────────────────────────────────────
+
+MEASURE 'Measure'[GDP per Capita Growth (Annual %)] =
+CALCULATE(
+    IF(
+        HASONEVALUE( 'Fact World Bank Data'[country] ),
+        AVERAGE( 'Fact World Bank Data'[gdp_per_capita_growth] ),
+        DIVIDE(
+            SUMX(
+                FILTER( 'Fact World Bank Data', NOT ISBLANK( 'Fact World Bank Data'[gdp_per_capita_growth] ) ),
+                'Fact World Bank Data'[gdp_per_capita_growth] * 'Fact World Bank Data'[total_population]
+            ),
+            SUMX(
+                FILTER( 'Fact World Bank Data', NOT ISBLANK( 'Fact World Bank Data'[gdp_per_capita_growth] ) ),
+                'Fact World Bank Data'[total_population]
+            )
+        )
+    ) / 100,
+    TREATAS( VALUES( 'Dim Reference Year'[Year] ), 'Dim Year'[year] )
+)
+
+-- ─────────────────────────────────────────────────────────────
+
+MEASURE 'Measure'[Poverty Headcount Ratio] =
+CALCULATE(
+    IF(
+        HASONEVALUE( 'Fact World Bank Data'[country] ),
+        AVERAGE( 'Fact World Bank Data'[poverty_headcount_ratio] ),
+        DIVIDE(
+            SUMX(
+                FILTER( 'Fact World Bank Data', NOT ISBLANK( 'Fact World Bank Data'[poverty_headcount_ratio] ) ),
+                'Fact World Bank Data'[poverty_headcount_ratio] * 'Fact World Bank Data'[total_population]
+            ),
+            SUMX(
+                FILTER( 'Fact World Bank Data', NOT ISBLANK( 'Fact World Bank Data'[poverty_headcount_ratio] ) ),
+                'Fact World Bank Data'[total_population]
+            )
+        )
+    ) / 100,
+    TREATAS( VALUES( 'Dim Reference Year'[Year] ), 'Dim Year'[year] )
+)
+
+
+-- ============================================================
+-- 2. GLOBAL BASELINES — REMOVEFILTERS on country dimensions
+--    Preserve the global aggregate regardless of country/
+--    region slicers, used as the benchmark reference line.
+-- ============================================================
+
+MEASURE 'Measure'[Global GDP per Capita (PPP)] =
+CALCULATE(
+    IF(
+        HASONEVALUE( 'Fact World Bank Data'[country] ),
+        AVERAGE( 'Fact World Bank Data'[gdp_per_capita] ),
+        DIVIDE(
+            SUMX(
+                FILTER( 'Fact World Bank Data', NOT ISBLANK( 'Fact World Bank Data'[gdp_per_capita] ) ),
+                'Fact World Bank Data'[gdp_per_capita] * 'Fact World Bank Data'[total_population]
+            ),
+            SUMX(
+                FILTER( 'Fact World Bank Data', NOT ISBLANK( 'Fact World Bank Data'[gdp_per_capita] ) ),
+                'Fact World Bank Data'[total_population]
+            )
+        )
+    ),
+    REMOVEFILTERS( 'Dim Country'[country_code], 'Dim Country'[country_name] ),
+    TREATAS( VALUES( 'Dim Reference Year'[Year] ), 'Dim Year'[year] )
+)
+
+-- ─────────────────────────────────────────────────────────────
+-- Note: REMOVEFILTERS on Dim Reference Year releases the point-
+-- in-time lock, allowing DIM_YEAR to drive the full timeline.
+-- ─────────────────────────────────────────────────────────────
+
+MEASURE 'Measure'[Global GDP per Capita (PPP) Trend] =
+CALCULATE(
+    IF(
+        HASONEVALUE( 'Fact World Bank Data'[country] ),
+        AVERAGE( 'Fact World Bank Data'[gdp_per_capita] ),
+        DIVIDE(
+            SUMX(
+                FILTER( 'Fact World Bank Data', NOT ISBLANK( 'Fact World Bank Data'[gdp_per_capita] ) ),
+                'Fact World Bank Data'[gdp_per_capita] * 'Fact World Bank Data'[total_population]
+            ),
+            SUMX(
+                FILTER( 'Fact World Bank Data', NOT ISBLANK( 'Fact World Bank Data'[gdp_per_capita] ) ),
+                'Fact World Bank Data'[total_population]
+            )
+        )
+    ),
+    REMOVEFILTERS( 'Dim Country'[region], 'Dim Country'[country_code], 'Dim Country'[country_name] )
+)
+
+
+-- ============================================================
+-- 3. TREND LINES — No TREATAS needed
+--    Dim Reference Year is physically disconnected, so no
+--    REMOVEFILTERS required — DIM_YEAR drives the full axis.
+-- ============================================================
+
+MEASURE 'Measure'[GDP per Capita Growth Trend] =
+-- Dim Reference Year is disconnected — no REMOVEFILTERS needed
+IF(
+    HASONEVALUE( 'Fact World Bank Data'[country] ),
+    AVERAGE( 'Fact World Bank Data'[gdp_per_capita_growth] ),
+    DIVIDE(
+        SUMX(
+            FILTER( 'Fact World Bank Data', NOT ISBLANK( 'Fact World Bank Data'[gdp_per_capita_growth] ) ),
+            'Fact World Bank Data'[gdp_per_capita_growth] * 'Fact World Bank Data'[total_population]
+        ),
+        SUMX(
+            FILTER( 'Fact World Bank Data', NOT ISBLANK( 'Fact World Bank Data'[gdp_per_capita_growth] ) ),
+            'Fact World Bank Data'[total_population]
+        )
+    )
+) / 100
+
+-- ─────────────────────────────────────────────────────────────
+
+MEASURE 'Measure'[GDP per Capita (PPP) Trend] =
+VAR _CountryToUse =
+    IF(
+        HASONEVALUE( 'Dim Country'[country_name] ),
+        [Economy in Focus],
+        [Country with Highest GDP per Capita]
+    )
+RETURN
+    CALCULATE(
+        IF(
+            HASONEVALUE( 'Fact World Bank Data'[country] ),
+            AVERAGE( 'Fact World Bank Data'[gdp_per_capita] ),
+            DIVIDE(
+                SUMX(
+                    FILTER( 'Fact World Bank Data', NOT ISBLANK( 'Fact World Bank Data'[gdp_per_capita] ) ),
+                    'Fact World Bank Data'[gdp_per_capita] * 'Fact World Bank Data'[total_population]
+                ),
+                SUMX(
+                    FILTER( 'Fact World Bank Data', NOT ISBLANK( 'Fact World Bank Data'[gdp_per_capita] ) ),
+                    'Fact World Bank Data'[total_population]
+                )
+            )
+        ),
+        FILTER(
+            ALL( 'Dim Country' ),
+            'Dim Country'[country_name] = _CountryToUse
+        )
+    )
+
+
+-- ============================================================
+-- 4. SHARE RATIOS — Structural economic decomposition
+-- ============================================================
+
+MEASURE 'Measure'[Population Share (% of World Population)] =
+DIVIDE(
+    [Total Population],
+    CALCULATE( [Total Population], ALL( 'Dim Country' ) )
+)
+
+-- ─────────────────────────────────────────────────────────────
+
+MEASURE 'Measure'[GDP Share (% of Global GDP)] =
+DIVIDE(
+    [GDP (PPP)],
+    CALCULATE( [GDP (PPP)], ALL( 'Dim Country' ) )
+)
+
+
+-- ============================================================
+-- 5. BENCHMARKING — Dynamic top-performer identification
+-- ============================================================
+
+MEASURE 'Measure'[Country with Highest GDP per Capita] =
+CALCULATE(
+    MAXX(
+        TOPN( 1, 'Dim Country', [GDP per Capita (PPP)], DESC ),
+        'Dim Country'[country_name]
+    ),
+    REMOVEFILTERS( 'Dim Year' )
+)
+
+-- ─────────────────────────────────────────────────────────────
+
+MEASURE 'Measure'[Economy in Focus] =
+SWITCH(
+    TRUE(),
+    HASONEVALUE( 'Dim Country'[country_name] ), SELECTEDVALUE( 'Dim Country'[country_name] ),
+    HASONEVALUE( 'Dim Country'[region] ),        "regional",
+    "global"
+)
+
+-- ─────────────────────────────────────────────────────────────
+
+MEASURE 'Measure'[Benchmark Economy] =
+SWITCH(
+    TRUE(),
+    HASONEVALUE( 'Dim Country'[country_name] ),
+        [Economy in Focus],
+    HASONEVALUE( 'Dim Country'[region] ),
+        "Region's Highest GDP per Capita: " & [Country with Highest GDP per Capita],
+    "World's Highest GDP per Capita: " & [Country with Highest GDP per Capita]
+)
+
+
+-- ============================================================
+-- 6. UI, HIGHLIGHTING & DYNAMIC FORMATTING
+--    DAX-driven UI/UX — no native conditional formatting panels
+-- ============================================================
+
+MEASURE 'Measure'[GDP per Capita (PPP) Highlighted Color] =
+-- #B22222 → recession year (selected)
+-- #118DFF → selected year (positive growth)
+-- #FFB3B3 → recession year (not selected)
+-- #CFE7FF → default
+SWITCH(
+    TRUE(),
+    SELECTEDVALUE( 'Dim Reference Year'[Year] ) = SELECTEDVALUE( 'Dim Year'[year] ) && [GDP per Capita Growth Trend] < 0,
+        "#B22222",
+    SELECTEDVALUE( 'Dim Reference Year'[Year] ) = SELECTEDVALUE( 'Dim Year'[year] ),
+        "#118DFF",
+    [GDP per Capita Growth Trend] < 0,
+        "#FFB3B3",
+    "#CFE7FF"
+)
+
+-- ─────────────────────────────────────────────────────────────
+
+MEASURE 'Measure'[World Population Display] =
+VAR _Population        = [Total Population]
+VAR _IsCountryFiltered = HASONEVALUE( 'Dim Country'[country_name] )
+VAR _DisplayValue =
+    SWITCH(
+        TRUE(),
+        _IsCountryFiltered && _Population < 100000, _Population / 1000,
+        _IsCountryFiltered,                          _Population / 1000000,
+        ( _Population / 1000000000 ) * 1000
+    )
+VAR _Suffix =
+    SWITCH(
+        TRUE(),
+        _IsCountryFiltered && _Population < 100000, " K",
+        " M"
+    )
+RETURN
+    FORMAT( ROUNDDOWN( _DisplayValue, 1 ), "#,0.0" ) & _Suffix
+
+-- ─────────────────────────────────────────────────────────────
+
+MEASURE 'Measure'[Global Income Position] =
+VAR _EconomyValue  = [GDP per Capita (PPP)]
+VAR _GlobalAverage = CALCULATE( [GDP per Capita (PPP)], ALL( 'Dim Country' ) )
+RETURN
+    SWITCH(
+        TRUE(),
+        _EconomyValue >= _GlobalAverage, "Above global average income",
+        "Below global average income"
+    )
+
+-- ─────────────────────────────────────────────────────────────
+
+MEASURE 'Measure'[Economic Scope Label] =
+IF( HASONEVALUE( 'Dim Country'[country_name] ), "Economy", "Economies" )
+
+-- ─────────────────────────────────────────────────────────────
+
+MEASURE 'Measure'[GDP per Capita Highlighted Value] =
+SWITCH(
+    TRUE(),
+    SELECTEDVALUE( 'Dim Reference Year'[Year] ) = SELECTEDVALUE( 'Dim Year'[year] ),
+        [GDP per Capita (PPP)],
+    BLANK()
+)
+
+-- ─────────────────────────────────────────────────────────────
+
+MEASURE 'Measure'[GDP per Capita Growth Highlighted Value] =
+SWITCH(
+    TRUE(),
+    SELECTEDVALUE( 'Dim Reference Year'[Year] ) = SELECTEDVALUE( 'Dim Year'[year] ),
+        [GDP per Capita Growth (Annual %)],
+    BLANK()
+)
+
+-- ─────────────────────────────────────────────────────────────
+
+MEASURE 'Measure'[Year Highlighted Value] =
+MAX( 'Dim Reference Year'[Year] )
+
+-- ─────────────────────────────────────────────────────────────
+
+MEASURE 'Measure'[Legend Placeholder] = 1
