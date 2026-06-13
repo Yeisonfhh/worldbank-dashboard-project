@@ -1,16 +1,16 @@
 {
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.8.0/schema.json",
-  "name": "b66f2808836fa18b11bc",
+  "name": "eed31059d322dbd1f7fc",
   "position": {
-    "x": 915.2974821262045,
-    "y": 451.20298414672055,
-    "z": 16000,
-    "height": 232.04724898974197,
-    "width": 355.232825613926,
-    "tabOrder": 13000
+    "x": 20,
+    "y": 59,
+    "z": 1000,
+    "height": 224,
+    "width": 361,
+    "tabOrder": 1000
   },
   "visual": {
-    "visualType": "areaChart",
+    "visualType": "lineChart",
     "query": {
       "queryState": {
         "Category": {
@@ -42,11 +42,11 @@
                       "Entity": "Measure"
                     }
                   },
-                  "Property": "Goblal GDP per Capita (PPP) Trend"
+                  "Property": "GDP per Capita (PPP) Trend"
                 }
               },
-              "queryRef": "indicators.Goblal GDP per Capita (All Years)",
-              "nativeQueryRef": "Goblal GDP per Capita (PPP) Trend"
+              "queryRef": "Measure.GDP per Capita (PPP) Trend",
+              "nativeQueryRef": "GDP per Capita (PPP) Trend"
             },
             {
               "field": {
@@ -56,11 +56,11 @@
                       "Entity": "Measure"
                     }
                   },
-                  "Property": "GDP per Capita (PPP) Trend"
+                  "Property": "Goblal GDP per Capita (PPP) Trend"
                 }
               },
-              "queryRef": "Measure.GDP per Capita (PPP) Trend 02",
-              "nativeQueryRef": "GDP per Capita (PPP) Trend"
+              "queryRef": "Measure.Goblal GDP per Capita (PPP) Trend",
+              "nativeQueryRef": "Goblal GDP per Capita (PPP) Trend"
             }
           ]
         }
@@ -69,29 +69,19 @@
         "sort": [
           {
             "field": {
-              "ScopedEval": {
+              "Measure": {
                 "Expression": {
-                  "Measure": {
-                    "Expression": {
-                      "SourceRef": {
-                        "Entity": "Measure"
-                      }
-                    },
-                    "Property": "GDP per Capita (PPP) Trend"
+                  "SourceRef": {
+                    "Entity": "Measure"
                   }
                 },
-                "Scope": [
-                  {
-                    "RoleRef": {
-                      "Role": "Rows"
-                    }
-                  }
-                ]
+                "Property": "GDP per Capita (PPP) Trend"
               }
             },
             "direction": "Descending"
           }
-        ]
+        ],
+        "isDefaultSort": true
       }
     },
     "objects": {
@@ -138,17 +128,17 @@
                 }
               }
             },
-            "fontSize": {
-              "expr": {
-                "Literal": {
-                  "Value": "8D"
-                }
-              }
-            },
             "matchLineColor": {
               "expr": {
                 "Literal": {
                   "Value": "true"
+                }
+              }
+            },
+            "fontSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "8D"
                 }
               }
             }
@@ -424,7 +414,7 @@
             "style": {
               "expr": {
                 "Literal": {
-                  "Value": "'dashed'"
+                  "Value": "'dotted'"
                 }
               }
             },
@@ -488,21 +478,21 @@
             "text": {
               "expr": {
                 "Literal": {
-                  "Value": "'💰 GDP per Capita Relative to the Global Average'"
+                  "Value": "'GDP per Capita Relative to the Global Average'"
                 }
               }
             },
             "fontSize": {
               "expr": {
                 "Literal": {
-                  "Value": "10.5D"
+                  "Value": "10D"
                 }
               }
             },
             "alignment": {
               "expr": {
                 "Literal": {
-                  "Value": "'left'"
+                  "Value": "'center'"
                 }
               }
             },
@@ -600,26 +590,21 @@
             "show": {
               "expr": {
                 "Literal": {
-                  "Value": "true"
+                  "Value": "false"
                 }
               }
             },
             "text": {
               "expr": {
-                "Measure": {
-                  "Expression": {
-                    "SourceRef": {
-                      "Entity": "Measure"
-                    }
-                  },
-                  "Property": "Benchmark Economy"
+                "Literal": {
+                  "Value": "''"
                 }
               }
             },
             "fontSize": {
               "expr": {
                 "Literal": {
-                  "Value": "10.5D"
+                  "Value": "8D"
                 }
               }
             }

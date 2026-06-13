@@ -2,11 +2,11 @@
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.8.0/schema.json",
   "name": "b2d760f9cbdee84f3980",
   "position": {
-    "x": 915.2974821262045,
-    "y": 7.1619521293130246,
+    "x": 925.32421510724271,
+    "y": 42.971712775878146,
     "z": 15000,
-    "height": 435.44668946223186,
-    "width": 355.232825613926,
+    "height": 466.95927883120919,
+    "width": 345.20609263288776,
     "tabOrder": 2000
   },
   "visual": {
@@ -671,7 +671,7 @@
             "text": {
               "expr": {
                 "Literal": {
-                  "Value": "'📌 Regional Development Indicators'"
+                  "Value": "'Regional economic and demographic structures'"
                 }
               }
             },
@@ -703,14 +703,14 @@
             "show": {
               "expr": {
                 "Literal": {
-                  "Value": "true"
+                  "Value": "false"
                 }
               }
             },
             "text": {
               "expr": {
                 "Literal": {
-                  "Value": "'Regional economic and demographic structures'"
+                  "Value": "''"
                 }
               }
             },
@@ -730,7 +730,7 @@
             "spaceBelowTitle": {
               "expr": {
                 "Literal": {
-                  "Value": "2D"
+                  "Value": "5D"
                 }
               }
             },

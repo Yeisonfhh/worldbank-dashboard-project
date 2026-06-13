@@ -11,7 +11,7 @@
 
 <br>
 
-<img src="assets/dashboard_screenshot.jpg" alt="World Bank Dashboard Preview" width="100%">
+<img src="assets/dashboard_screenshot.png" alt="World Bank Dashboard Preview" width="100%">
 
 </div>
 

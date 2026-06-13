@@ -283,8 +283,7 @@ table Measure
 			        MAXX(
 			            TOPN(1, 'Dim Country', [GDP per Capita (PPP)], DESC),
 			            'Dim Country'[country_name]
-			        ),
-			        REMOVEFILTERS('Dim Year')
+			        )
 			    )
 		lineageTag: 5451bdf7-2d90-4460-970a-21b1b503bbf3
 
@@ -292,13 +291,58 @@ table Measure
 			SWITCH(
 			        TRUE(),
 			        HASONEVALUE('Dim Country'[country_name]), [Economy in Focus],
-			        HASONEVALUE('Dim Country'[region]), "Region’s Highest GDP per Capita: " & [Country with Highest GDP per Capita],
-			        "World’s Highest GDP per Capita: " & [Country with Highest GDP per Capita]
+			        [Country with Highest GDP per Capita]
 			    )
 		lineageTag: 8f2621c7-4eda-43c0-aec0-fb1652bd889e
 
 	measure 'Economic Scope Label' = IF(HASONEVALUE('Dim Country'[country_name]), "Economy", "Economies")
 		lineageTag: 4975de68-55b1-4031-bd34-b70546b94e24
+
+	measure 'GDP per Capita Rank' =
+			
+			VAR _Rank =
+			    CALCULATE(
+			        RANKX(
+			            ALL('Dim Country'[country_code],'Dim Country'[region]),
+			            [GDP per Capita (PPP)],
+			            ,
+			            DESC,
+			            DENSE
+			        )
+			    )
+			
+			RETURN
+			IF(
+			    HASONEVALUE('Dim Country'[country_name]),
+			    _Rank,
+			    1
+			)
+		formatString: 0
+		lineageTag: 58a38b1a-0974-4988-8e66-e3875571cf18
+
+	measure 'GDP per Capita Ranking Narrative' =
+			
+			VAR _Rank =
+			    [GDP per Capita Rank]
+			
+			VAR _MinYear =
+			    MIN('Dim Reference Year'[Year])
+			
+			VAR _MaxYear =
+			    MAX('Dim Reference Year'[Year])
+			
+			VAR _YearLabel =
+			    IF(
+			        _MinYear = _MaxYear,
+			        FORMAT(_MinYear, "0"),
+			        FORMAT(_MinYear, "0") & "–" & FORMAT(_MaxYear, "0")
+			    )
+			
+			RETURN
+			"Ranked #" & FORMAT(_Rank, "0") &
+			" globally in GDP per capita (PPP) during " &
+			_YearLabel & "."
+		lineageTag: c229c0d5-59a0-49e3-8019-2dc2c50f9b0a
 
 	partition Measure = m
 		mode: import

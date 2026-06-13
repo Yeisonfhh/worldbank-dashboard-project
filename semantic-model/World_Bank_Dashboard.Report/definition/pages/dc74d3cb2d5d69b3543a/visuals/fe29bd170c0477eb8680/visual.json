@@ -6,8 +6,8 @@
     "y": 0,
     "z": 16500,
     "height": 118.6324315896146,
-    "width": 796.4090767796082,
-    "tabOrder": 0
+    "width": 1165.9658066521604,
+    "tabOrder": 1000
   },
   "visual": {
     "visualType": "columnChart",
@@ -367,7 +367,7 @@
             "right": {
               "expr": {
                 "Literal": {
-                  "Value": "0D"
+                  "Value": "5D"
                 }
               }
             },

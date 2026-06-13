@@ -30,136 +30,6 @@
               "nativeQueryRef": "country_code"
             }
           ]
-        },
-        "Tooltips": {
-          "projections": [
-            {
-              "field": {
-                "Measure": {
-                  "Expression": {
-                    "SourceRef": {
-                      "Entity": "Measure"
-                    }
-                  },
-                  "Property": "Economy in Focus"
-                }
-              },
-              "queryRef": "Measure.Economy in Focus",
-              "nativeQueryRef": "Economy in Focus"
-            },
-            {
-              "field": {
-                "Measure": {
-                  "Expression": {
-                    "SourceRef": {
-                      "Entity": "Measure"
-                    }
-                  },
-                  "Property": "Total Population"
-                }
-              },
-              "queryRef": "Measure.Total population",
-              "nativeQueryRef": "Total Population"
-            },
-            {
-              "field": {
-                "Measure": {
-                  "Expression": {
-                    "SourceRef": {
-                      "Entity": "Measure"
-                    }
-                  },
-                  "Property": "Population Share (% of World Population)"
-                }
-              },
-              "queryRef": "Measure.Population share (% of world population)",
-              "nativeQueryRef": "Population Share (% of World Population)"
-            },
-            {
-              "field": {
-                "Measure": {
-                  "Expression": {
-                    "SourceRef": {
-                      "Entity": "Measure"
-                    }
-                  },
-                  "Property": "GDP (PPP)"
-                }
-              },
-              "queryRef": "Measure.GDP (PPP)",
-              "nativeQueryRef": "GDP (PPP)"
-            },
-            {
-              "field": {
-                "Measure": {
-                  "Expression": {
-                    "SourceRef": {
-                      "Entity": "Measure"
-                    }
-                  },
-                  "Property": "GDP Share (% of Global GDP)"
-                }
-              },
-              "queryRef": "Measure.GDP share (% of global GDP)",
-              "nativeQueryRef": "GDP Share (% of Global GDP)"
-            },
-            {
-              "field": {
-                "Measure": {
-                  "Expression": {
-                    "SourceRef": {
-                      "Entity": "Measure"
-                    }
-                  },
-                  "Property": "Global GDP per Capita (PPP)"
-                }
-              },
-              "queryRef": "Measure.Global GDP per capita (PPP)",
-              "nativeQueryRef": "Global GDP per Capita (PPP)"
-            },
-            {
-              "field": {
-                "Measure": {
-                  "Expression": {
-                    "SourceRef": {
-                      "Entity": "Measure"
-                    }
-                  },
-                  "Property": "GDP per Capita (PPP)"
-                }
-              },
-              "queryRef": "Measure.GDP per capita (PPP)",
-              "nativeQueryRef": "GDP per Capita (PPP)"
-            },
-            {
-              "field": {
-                "Measure": {
-                  "Expression": {
-                    "SourceRef": {
-                      "Entity": "Measure"
-                    }
-                  },
-                  "Property": "GDP per Capita Growth (Annual %)"
-                }
-              },
-              "queryRef": "Measure.GDP per capita growth (annual %)",
-              "nativeQueryRef": "GDP per Capita Growth (Annual %)"
-            },
-            {
-              "field": {
-                "Measure": {
-                  "Expression": {
-                    "SourceRef": {
-                      "Entity": "Measure"
-                    }
-                  },
-                  "Property": "Global Income Position"
-                }
-              },
-              "queryRef": "Measure.Global Income Position",
-              "nativeQueryRef": "Global Income Position"
-            }
-          ]
         }
       },
       "sortDefinition": {
@@ -509,7 +379,7 @@
             "section": {
               "expr": {
                 "Literal": {
-                  "Value": "'a751238bfdf499e6689a'"
+                  "Value": "'7ac0826d26de04493aa0'"
                 }
               }
             },
