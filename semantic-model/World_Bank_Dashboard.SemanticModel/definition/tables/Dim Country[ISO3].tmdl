@@ -1,0 +1,73 @@
+table 'Dim Country[ISO3]'
+	lineageTag: bb584c35-8613-4fa2-81b2-284778b9a31b
+
+	column 'Country Name'
+		dataType: string
+		lineageTag: 13d08f25-e81a-45fb-96de-b31ba7436a03
+		summarizeBy: none
+		sourceColumn: Country Name
+
+		annotation SummarizationSetBy = Automatic
+
+	column ISO3
+		dataType: string
+		lineageTag: 64716e6c-9eaf-4b80-9cc6-6664b2de8da9
+		summarizeBy: none
+		sourceColumn: ISO3
+
+		annotation SummarizationSetBy = Automatic
+
+	column ISO2
+		dataType: string
+		lineageTag: af1e67d2-c683-4173-b597-fe81de2d989b
+		summarizeBy: none
+		sourceColumn: ISO2
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Flag URL'
+		dataType: string
+		lineageTag: 5d38b478-3191-4124-b16f-ad1020957c93
+		dataCategory: ImageUrl
+		summarizeBy: none
+		sourceColumn: Flag URL
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Dim Country[ISO3]' = m
+		mode: import
+		source =
+				let
+				    Source = Csv.Document(
+				        Web.Contents("https://datahub.io/core/country-codes/r/country-codes.csv"),
+				        [Delimiter=",", Encoding=65001, QuoteStyle=QuoteStyle.Csv]
+				    ),
+				
+				    PromoteHeaders = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),
+				
+				    SelectColumns = Table.SelectColumns(PromoteHeaders,
+				        {
+				            "CLDR display name",
+				            "ISO3166-1-Alpha-3",
+				            "ISO3166-1-Alpha-2"
+				        }
+				    ),
+				
+				    Rename = Table.RenameColumns(SelectColumns,{
+				        {"CLDR display name","Country Name"},
+				        {"ISO3166-1-Alpha-3","ISO3"},
+				        {"ISO3166-1-Alpha-2","ISO2"}
+				    }),
+				
+				    CleanRows = Table.SelectRows(Rename, each [ISO3] <> null and [ISO2] <> null),
+				
+				    AddFlag = Table.AddColumn(CleanRows, "Flag URL", each
+				        "https://flagcdn.com/32x24/" & Text.Lower([ISO2]) & ".png"
+				    )
+				in
+				    AddFlag
+
+	annotation PBI_NavigationStepName = Navegación
+
+	annotation PBI_ResultType = Table
+

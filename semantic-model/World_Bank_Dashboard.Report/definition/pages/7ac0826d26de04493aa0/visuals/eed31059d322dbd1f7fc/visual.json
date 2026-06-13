@@ -1,5 +1,5 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.8.0/schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.9.0/schema.json",
   "name": "eed31059d322dbd1f7fc",
   "position": {
     "x": 20,
@@ -707,7 +707,7 @@
                 "Entity": "Measure"
               }
             },
-            "Property": "Poverty Headcount Ratio"
+            "Property": "Poverty Headcount Ratio (%)"
           }
         },
         "type": "Advanced",

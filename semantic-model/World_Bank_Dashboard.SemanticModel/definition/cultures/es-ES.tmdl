@@ -1382,7 +1382,7 @@ cultureInfo es-ES
 			      "Definition": {
 			        "Binding": {
 			          "ConceptualEntity": "Measure",
-			          "ConceptualProperty": "Poverty Headcount Ratio"
+			          "ConceptualProperty": "Poverty Headcount Ratio (%)"
 			        }
 			      },
 			      "State": "Generated",

@@ -1,12 +1,12 @@
 {
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.9.0/schema.json",
-  "name": "5c74ea977403ee6a26b0",
+  "name": "ff316232e1ad9957c988",
   "position": {
-    "x": 43.589214782704438,
+    "x": 0,
     "y": 0,
-    "z": 13000,
-    "height": 42.971712775878146,
-    "width": 345.20609263288776,
+    "z": 15000,
+    "height": 41,
+    "width": 37.3732142184025,
     "tabOrder": 1000
   },
   "visual": {
@@ -19,20 +19,13 @@
               {
                 "textRuns": [
                   {
-                    "value": "Global GDP per Capita by Economy",
+                    "value": "📌",
                     "textStyle": {
-                      "fontWeight": "bold",
-                      "color": "#333333"
+                      "fontSize": "20pt"
                     }
                   }
-                ]
-              },
-              {
-                "textRuns": [
-                  {
-                    "value": "(PPP, constant 2021 international dollars)"
-                  }
-                ]
+                ],
+                "horizontalTextAlignment": "center"
               }
             ]
           }
@@ -84,7 +77,7 @@
             "show": {
               "expr": {
                 "Literal": {
-                  "Value": "true"
+                  "Value": "false"
                 }
               }
             },
@@ -199,14 +192,14 @@
             "left": {
               "expr": {
                 "Literal": {
-                  "Value": "5D"
+                  "Value": "0D"
                 }
               }
             },
             "right": {
               "expr": {
                 "Literal": {
-                  "Value": "5D"
+                  "Value": "0D"
                 }
               }
             }
@@ -310,5 +303,5 @@
     },
     "drillFilterOtherVisuals": true
   },
-  "parentGroupName": "7ab4137e979b33bd15e7"
+  "parentGroupName": "6b69d075475d7d978dd2"
 }

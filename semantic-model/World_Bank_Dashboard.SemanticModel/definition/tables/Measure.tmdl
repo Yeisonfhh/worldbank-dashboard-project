@@ -11,7 +11,7 @@ table Measure
 
 		annotation PBI_FormatHint = {"isDecimal":true}
 
-	measure 'Poverty Headcount Ratio' =
+	measure 'Poverty Headcount Ratio (%)' =
 			CALCULATE(
 			        IF(
 			            HASONEVALUE('Fact World Bank Data'[country]),
@@ -343,6 +343,105 @@ table Measure
 			" globally in GDP per capita (PPP) during " &
 			_YearLabel & "."
 		lineageTag: c229c0d5-59a0-49e3-8019-2dc2c50f9b0a
+
+	measure 'Population Share Heatmap Color' =
+			
+			VAR _Value = [Population Share (% of World Population)]
+			
+			RETURN
+			    SWITCH(
+			        TRUE(),
+			
+			        ISBLANK(_Value), "#FFFFFF",
+			
+			        _Value <= -0.40, "#B00020",
+			        _Value <= -0.30, "#D32F2F",
+			        _Value <= -0.20, "#EF5350",
+			        _Value <= -0.15, "#E57373",
+			        _Value <= -0.10, "#EF9A9A",
+			        _Value <= -0.05, "#FFCDD2",
+			        _Value < 0, "#FDECEF",
+			
+			        _Value = 0, "#FFFFFF",
+			
+			        _Value <= 0.05, "#F3F9FF",
+			        _Value <= 0.10, "#E1F0FF",
+			        _Value <= 0.15, "#CBE4FF",
+			        _Value <= 0.20, "#A9D2FF",
+			        _Value <= 0.25, "#7BB9FF",
+			        _Value <= 0.30, "#4DA3FF",
+			        _Value <= 0.40, "#118DFF",
+			        _Value <= 0.50, "#006EDC",
+			
+			        "#004EB0"
+			    )
+		lineageTag: f0df749f-8d00-489e-b910-271f484ad122
+
+	measure 'GDP Share Heatmap Color' =
+			
+			VAR _Value = [GDP Share (% of Global GDP)]
+			
+			RETURN
+			    SWITCH(
+			        TRUE(),
+			
+			        ISBLANK(_Value), "#FFFFFF",
+			
+			        _Value <= -0.40, "#B00020",
+			        _Value <= -0.30, "#D32F2F",
+			        _Value <= -0.20, "#EF5350",
+			        _Value <= -0.15, "#E57373",
+			        _Value <= -0.10, "#EF9A9A",
+			        _Value <= -0.05, "#FFCDD2",
+			        _Value < 0, "#FDECEF",
+			
+			        _Value = 0, "#FFFFFF",
+			
+			        _Value <= 0.05, "#F3F9FF",
+			        _Value <= 0.10, "#E1F0FF",
+			        _Value <= 0.15, "#CBE4FF",
+			        _Value <= 0.20, "#A9D2FF",
+			        _Value <= 0.25, "#7BB9FF",
+			        _Value <= 0.30, "#4DA3FF",
+			        _Value <= 0.40, "#118DFF",
+			        _Value <= 0.50, "#006EDC",
+			
+			        "#004EB0"
+			    )
+		lineageTag: 6876a670-f035-4856-8e64-61a520ec25ac
+
+	measure 'Poverty Headcount Ratio Heatmap Color' =
+			
+			VAR _Value = [Poverty Headcount Ratio (%)]
+			
+			RETURN
+			    SWITCH(
+			        TRUE(),
+			
+			        ISBLANK(_Value), "#FFFFFF",
+			
+			        _Value <= -0.40, "#B00020",
+			        _Value <= -0.30, "#D32F2F",
+			        _Value <= -0.20, "#EF5350",
+			        _Value <= -0.15, "#E57373",
+			        _Value <= -0.10, "#EF9A9A",
+			        _Value <= -0.05, "#FFCDD2",
+			        _Value < 0, "#FDECEF",
+			
+			        _Value = 0, "#FFFFFF",
+			
+			        _Value <= 0.05, "#F3F9FF",
+			        _Value <= 0.10, "#E1F0FF",
+			        _Value <= 0.15, "#CBE4FF",
+			        _Value <= 0.20, "#A9D2FF",
+			        _Value <= 0.25, "#7BB9FF",
+			        _Value <= 0.30, "#4DA3FF",
+			        _Value <= 0.40, "#118DFF",
+			        _Value <= 0.50, "#006EDC",
+			
+			        "#004EB0"
+			    )
+		lineageTag: a7c70544-8181-431d-ae60-01b9e52cd5cc
 
 	partition Measure = m
 		mode: import

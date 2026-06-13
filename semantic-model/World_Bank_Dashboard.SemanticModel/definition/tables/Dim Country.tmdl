@@ -44,7 +44,7 @@ table 'Dim Country'
 	column longitude
 		dataType: double
 		lineageTag: 7d34690f-da67-442b-b937-a87e4423100d
-		summarizeBy: none
+		summarizeBy: sum
 		sourceColumn: longitude
 
 		annotation SummarizationSetBy = Automatic
@@ -54,7 +54,7 @@ table 'Dim Country'
 	column latitude
 		dataType: double
 		lineageTag: 2aa9db0e-53c8-4e0c-9f1f-1edd74b995ee
-		summarizeBy: none
+		summarizeBy: sum
 		sourceColumn: latitude
 
 		annotation SummarizationSetBy = Automatic

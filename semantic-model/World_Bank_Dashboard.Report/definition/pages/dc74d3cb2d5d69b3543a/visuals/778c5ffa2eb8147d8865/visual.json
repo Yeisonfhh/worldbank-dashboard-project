@@ -1,12 +1,12 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.8.0/schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.9.0/schema.json",
   "name": "778c5ffa2eb8147d8865",
   "position": {
     "x": 0,
     "y": 0,
     "z": 10000,
     "height": 146.10382343798568,
-    "width": 85,
+    "width": 73.051911718992855,
     "tabOrder": 0
   },
   "visual": {
@@ -18,9 +18,6 @@
             "paragraphs": [
               {
                 "textRuns": [
-                  {
-                    "value": "🔍"
-                  },
                   {
                     "value": "Evolution of Global GDP per Capita Growth",
                     "textStyle": {

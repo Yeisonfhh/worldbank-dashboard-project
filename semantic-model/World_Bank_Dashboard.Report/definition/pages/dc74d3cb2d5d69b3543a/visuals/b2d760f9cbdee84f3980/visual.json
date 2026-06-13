@@ -1,12 +1,12 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.8.0/schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.9.0/schema.json",
   "name": "b2d760f9cbdee84f3980",
   "position": {
-    "x": 925.32421510724271,
-    "y": 42.971712775878146,
+    "x": 924.572966737166,
+    "y": 94.504902903287828,
     "z": 15000,
-    "height": 466.95927883120919,
-    "width": 345.20609263288776,
+    "height": 415.82157277446646,
+    "width": 346.51797731205539,
     "tabOrder": 2000
   },
   "visual": {
@@ -85,11 +85,11 @@
                       "Entity": "Measure"
                     }
                   },
-                  "Property": "GDP per Capita Growth (Annual %)"
+                  "Property": "Poverty Headcount Ratio (%)"
                 }
               },
-              "queryRef": "Measure.GDP per capita growth",
-              "nativeQueryRef": "GDP per Capita Growth (Annual %)"
+              "queryRef": "Measure.Poverty Headcount Ratio",
+              "nativeQueryRef": "Poverty Headcount Ratio (%)"
             }
           ]
         }
@@ -211,13 +211,13 @@
             "value": {
               "expr": {
                 "Literal": {
-                  "Value": "67.72951127808913D"
+                  "Value": "69D"
                 }
               }
             }
           },
           "selector": {
-            "metadata": "Measure.GDP per capita growth"
+            "metadata": "Measure.Poverty Headcount Ratio"
           }
         }
       ],
@@ -348,42 +348,13 @@
               "solid": {
                 "color": {
                   "expr": {
-                    "FillRule": {
-                      "Input": {
-                        "Measure": {
-                          "Expression": {
-                            "SourceRef": {
-                              "Entity": "Measure"
-                            }
-                          },
-                          "Property": "Population Share (% of World Population)"
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Measure"
                         }
                       },
-                      "FillRule": {
-                        "linearGradient2": {
-                          "min": {
-                            "color": {
-                              "Literal": {
-                                "Value": "'#F2EAE4'"
-                              }
-                            }
-                          },
-                          "max": {
-                            "color": {
-                              "Literal": {
-                                "Value": "'maxColor'"
-                              }
-                            }
-                          },
-                          "nullColoringStrategy": {
-                            "strategy": {
-                              "Literal": {
-                                "Value": "'asZero'"
-                              }
-                            }
-                          }
-                        }
-                      }
+                      "Property": "Population Share Heatmap Color"
                     }
                   }
                 }
@@ -407,42 +378,13 @@
               "solid": {
                 "color": {
                   "expr": {
-                    "FillRule": {
-                      "Input": {
-                        "Measure": {
-                          "Expression": {
-                            "SourceRef": {
-                              "Entity": "Measure"
-                            }
-                          },
-                          "Property": "GDP Share (% of Global GDP)"
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Measure"
                         }
                       },
-                      "FillRule": {
-                        "linearGradient2": {
-                          "min": {
-                            "color": {
-                              "Literal": {
-                                "Value": "'#F2EAE4'"
-                              }
-                            }
-                          },
-                          "max": {
-                            "color": {
-                              "Literal": {
-                                "Value": "'maxColor'"
-                              }
-                            }
-                          },
-                          "nullColoringStrategy": {
-                            "strategy": {
-                              "Literal": {
-                                "Value": "'asZero'"
-                              }
-                            }
-                          }
-                        }
-                      }
+                      "Property": "GDP Share Heatmap Color"
                     }
                   }
                 }
@@ -466,42 +408,13 @@
               "solid": {
                 "color": {
                   "expr": {
-                    "FillRule": {
-                      "Input": {
-                        "Measure": {
-                          "Expression": {
-                            "SourceRef": {
-                              "Entity": "Measure"
-                            }
-                          },
-                          "Property": "GDP per Capita Growth (Annual %)"
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Measure"
                         }
                       },
-                      "FillRule": {
-                        "linearGradient2": {
-                          "min": {
-                            "color": {
-                              "Literal": {
-                                "Value": "'#F2EAE4'"
-                              }
-                            }
-                          },
-                          "max": {
-                            "color": {
-                              "Literal": {
-                                "Value": "'maxColor'"
-                              }
-                            }
-                          },
-                          "nullColoringStrategy": {
-                            "strategy": {
-                              "Literal": {
-                                "Value": "'asZero'"
-                              }
-                            }
-                          }
-                        }
-                      }
+                      "Property": "Poverty Headcount Ratio Heatmap Color"
                     }
                   }
                 }
@@ -516,7 +429,7 @@
                 }
               }
             ],
-            "metadata": "Measure.GDP per capita growth"
+            "metadata": "Measure.Poverty Headcount Ratio"
           }
         }
       ],
@@ -545,7 +458,7 @@
             "gridVertical": {
               "expr": {
                 "Literal": {
-                  "Value": "false"
+                  "Value": "true"
                 }
               }
             },
@@ -584,7 +497,14 @@
             "show": {
               "expr": {
                 "Literal": {
-                  "Value": "false"
+                  "Value": "true"
+                }
+              }
+            },
+            "transparency": {
+              "expr": {
+                "Literal": {
+                  "Value": "100D"
                 }
               }
             }
@@ -657,7 +577,7 @@
             "show": {
               "expr": {
                 "Literal": {
-                  "Value": "true"
+                  "Value": "false"
                 }
               }
             },
@@ -738,6 +658,19 @@
               "expr": {
                 "Literal": {
                   "Value": "5D"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "visualHeader": [
+        {
+          "properties": {
+            "transparency": {
+              "expr": {
+                "Literal": {
+                  "Value": "0D"
                 }
               }
             }

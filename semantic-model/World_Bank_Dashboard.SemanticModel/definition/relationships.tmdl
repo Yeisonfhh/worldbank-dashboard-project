@@ -6,3 +6,7 @@ relationship e706f622-80e8-7f08-a89d-34ff26f52a8c
 	fromColumn: 'Fact World Bank Data'.year
 	toColumn: 'Dim Year'.year
 
+relationship affb1084-9fff-246c-b0f4-195664140b29
+	fromColumn: 'Dim Country'.country_code
+	toColumn: 'Dim Country[ISO3]'.ISO3
+

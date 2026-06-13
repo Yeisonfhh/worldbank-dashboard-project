@@ -1,13 +1,13 @@
 {
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.9.0/schema.json",
-  "name": "5c74ea977403ee6a26b0",
+  "name": "a8bb352df52613e8d6d0",
   "position": {
-    "x": 43.589214782704438,
-    "y": 0,
+    "x": 42.290793594314863,
+    "y": 1.4729087748689784,
     "z": 13000,
-    "height": 42.971712775878146,
-    "width": 345.20609263288776,
-    "tabOrder": 1000
+    "height": 39,
+    "width": 303.765690376569,
+    "tabOrder": 0
   },
   "visual": {
     "visualType": "textbox",
@@ -19,18 +19,11 @@
               {
                 "textRuns": [
                   {
-                    "value": "Global GDP per Capita by Economy",
+                    "value": "Regional economic and demographic structures",
                     "textStyle": {
                       "fontWeight": "bold",
                       "color": "#333333"
                     }
-                  }
-                ]
-              },
-              {
-                "textRuns": [
-                  {
-                    "value": "(PPP, constant 2021 international dollars)"
                   }
                 ]
               }
@@ -84,7 +77,7 @@
             "show": {
               "expr": {
                 "Literal": {
-                  "Value": "true"
+                  "Value": "false"
                 }
               }
             },
@@ -310,5 +303,5 @@
     },
     "drillFilterOtherVisuals": true
   },
-  "parentGroupName": "7ab4137e979b33bd15e7"
+  "parentGroupName": "6b69d075475d7d978dd2"
 }
