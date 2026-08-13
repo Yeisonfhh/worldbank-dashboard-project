@@ -13,6 +13,10 @@
 
 <img src="assets/dashboard_screenshot.png" alt="World Bank Dashboard Preview" width="100%">
 
+<br>
+
+### 🔴 [**View Live Dashboard**](https://app.powerbi.com/view?r=eyJrIjoiMGI0MDhkMTEtYmYxZi00NzQ4LTliZjktZGI4Y2YzMWI5YjQ2IiwidCI6ImE1ZGVjZDEwLTkxNjUtNDYzNi1hNjRjLTc5NTgwMDQyMTVmYSIsImMiOjR9)
+
 </div>
 
 ---
@@ -150,6 +154,14 @@ The UI is programmatically driven by DAX — no native conditional formatting pa
 | **Power BI Desktop** | May 2023 or newer — required to open `.pbip` source files |
 | **Git** | Any recent version — required to clone the repository |
 | **VS Code** *(optional)* | Recommended for TMDL and DAX syntax highlighting |
+
+---
+
+### 🌐 Option 0 — View Online (No Install Required)
+
+> **Audience:** Anyone who just wants to explore the published dashboard in the browser.
+
+🔗 **[Open the live Power BI report](https://app.powerbi.com/view?r=eyJrIjoiMGI0MDhkMTEtYmYxZi00NzQ4LTliZjktZGI4Y2YzMWI5YjQ2IiwidCI6ImE1ZGVjZDEwLTkxNjUtNDYzNi1hNjRjLTc5NTgwMDQyMTVmYSIsImMiOjR9)**
 
 ---
 
