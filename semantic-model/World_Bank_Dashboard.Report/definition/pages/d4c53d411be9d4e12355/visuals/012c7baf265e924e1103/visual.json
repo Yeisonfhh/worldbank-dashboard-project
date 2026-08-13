@@ -1,19 +1,19 @@
 {
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.10.0/schema.json",
-  "name": "b2d760f9cbdee84f3980",
+  "name": "012c7baf265e924e1103",
   "position": {
-    "x": 924.572966737166,
-    "y": 94.504902903287828,
-    "z": 15000,
-    "height": 415.82157277446646,
-    "width": 346.51797731205539,
-    "tabOrder": 2000
+    "x": 20.053465962076469,
+    "y": 94.537768106931921,
+    "z": 5000,
+    "height": 581.55051290021754,
+    "width": 1250.476841778054,
+    "tabOrder": 1000
   },
   "visual": {
-    "visualType": "pivotTable",
+    "visualType": "tableEx",
     "query": {
       "queryState": {
-        "Rows": {
+        "Values": {
           "projections": [
             {
               "field": {
@@ -27,8 +27,21 @@
                 }
               },
               "queryRef": "country.region",
-              "nativeQueryRef": "region",
-              "active": true
+              "nativeQueryRef": "region"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Dim Country[ISO3]"
+                    }
+                  },
+                  "Property": "Flag URL"
+                }
+              },
+              "queryRef": "Dim Country[ISO3].Flag URL",
+              "nativeQueryRef": "Flag URL"
             },
             {
               "field": {
@@ -42,13 +55,22 @@
                 }
               },
               "queryRef": "country.country_name",
-              "nativeQueryRef": "country_name",
-              "active": false
-            }
-          ]
-        },
-        "Values": {
-          "projections": [
+              "nativeQueryRef": "country_name"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Dim Country"
+                    }
+                  },
+                  "Property": "income_level"
+                }
+              },
+              "queryRef": "Dim Country.income_level",
+              "nativeQueryRef": "income_level"
+            },
             {
               "field": {
                 "Measure": {
@@ -57,11 +79,11 @@
                       "Entity": "Measure"
                     }
                   },
-                  "Property": "Population Share (% of World Population)"
+                  "Property": "GDP (PPP)"
                 }
               },
-              "queryRef": "Measure.Population Share",
-              "nativeQueryRef": "Population Share (% of World Population)"
+              "queryRef": "Measure.GDP (PPP)",
+              "nativeQueryRef": "GDP (PPP)"
             },
             {
               "field": {
@@ -74,8 +96,64 @@
                   "Property": "GDP Share (% of Global GDP)"
                 }
               },
-              "queryRef": "Measure.Income Share",
+              "queryRef": "Measure.GDP Share (% of Global GDP)",
               "nativeQueryRef": "GDP Share (% of Global GDP)"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Measure"
+                    }
+                  },
+                  "Property": "GDP per Capita (PPP)"
+                }
+              },
+              "queryRef": "Measure.GDP per Capita (PPP)",
+              "nativeQueryRef": "GDP per Capita (PPP)"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Measure"
+                    }
+                  },
+                  "Property": "GDP per Capita Growth (Annual %)"
+                }
+              },
+              "queryRef": "Measure.GDP per Capita Growth (Annual %)",
+              "nativeQueryRef": "GDP per Capita Growth (Annual %)"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Measure"
+                    }
+                  },
+                  "Property": "Total Population"
+                }
+              },
+              "queryRef": "Measure.Total Population",
+              "nativeQueryRef": "Total Population"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Measure"
+                    }
+                  },
+                  "Property": "Population Share (% of World Population)"
+                }
+              },
+              "queryRef": "Measure.Population Share (% of World Population)",
+              "nativeQueryRef": "Population Share (% of World Population)"
             },
             {
               "field": {
@@ -88,7 +166,7 @@
                   "Property": "Poverty Headcount Ratio (%)"
                 }
               },
-              "queryRef": "Measure.Poverty Headcount Ratio",
+              "queryRef": "Measure.Poverty Headcount Ratio (%)",
               "nativeQueryRef": "Poverty Headcount Ratio (%)"
             }
           ]
@@ -98,56 +176,20 @@
         "sort": [
           {
             "field": {
-              "Column": {
+              "Measure": {
                 "Expression": {
                   "SourceRef": {
-                    "Entity": "Dim Country"
+                    "Entity": "Measure"
                   }
                 },
-                "Property": "region"
+                "Property": "GDP per Capita (PPP)"
               }
             },
-            "direction": "Ascending"
+            "direction": "Descending"
           }
         ]
       }
     },
-    "expansionStates": [
-      {
-        "roles": [
-          "Rows"
-        ],
-        "levels": [
-          {
-            "queryRefs": [
-              "country.region"
-            ],
-            "isCollapsed": true,
-            "identityKeys": [
-              {
-                "Column": {
-                  "Expression": {
-                    "SourceRef": {
-                      "Entity": "Dim Country"
-                    }
-                  },
-                  "Property": "region"
-                }
-              }
-            ],
-            "isPinned": true
-          },
-          {
-            "queryRefs": [
-              "country.country_name"
-            ],
-            "isCollapsed": true,
-            "isPinned": true
-          }
-        ],
-        "root": {}
-      }
-    ],
     "objects": {
       "columnWidth": [
         {
@@ -169,27 +211,13 @@
             "value": {
               "expr": {
                 "Literal": {
-                  "Value": "122.906478744433D"
+                  "Value": "180.23731821592273D"
                 }
               }
             }
           },
           "selector": {
             "metadata": "country.region"
-          }
-        },
-        {
-          "properties": {
-            "value": {
-              "expr": {
-                "Literal": {
-                  "Value": "72.31101785255096D"
-                }
-              }
-            }
-          },
-          "selector": {
-            "metadata": "Measure.Population Share"
           }
         },
         {
@@ -219,6 +247,90 @@
           "selector": {
             "metadata": "Measure.Poverty Headcount Ratio"
           }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "72.31101785255096D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "Measure.Population Share"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "86.73091897259427D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "Measure.GDP Share (% of Global GDP)"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "83.04787540857527D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "Measure.GDP per Capita (PPP)"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "87.1383492157517D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "Measure.GDP per Capita Growth (Annual %)"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "105.9496636353907D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "Measure.Population Share (% of World Population)"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "89.94805508521877D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "Measure.Poverty Headcount Ratio (%)"
+          }
         }
       ],
       "columnHeaders": [
@@ -228,6 +340,24 @@
               "expr": {
                 "Literal": {
                   "Value": "'''Segoe UI'', wf_segoe-ui_normal, helvetica, arial, sans-serif'"
+                }
+              }
+            },
+            "fontSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "9D"
+                }
+              }
+            },
+            "fontColor": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "Literal": {
+                      "Value": "'#242424'"
+                    }
+                  }
                 }
               }
             },
@@ -243,90 +373,13 @@
                 }
               }
             },
-            "fontColor": {
-              "solid": {
-                "color": {
-                  "expr": {
-                    "Literal": {
-                      "Value": "'#242424'"
-                    }
-                  }
-                }
-              }
-            },
             "alignment": {
               "expr": {
                 "Literal": {
                   "Value": "'Right'"
                 }
               }
-            },
-            "titleAlignment": {
-              "expr": {
-                "Literal": {
-                  "Value": "'Left'"
-                }
-              }
-            },
-            "fontSize": {
-              "expr": {
-                "Literal": {
-                  "Value": "9D"
-                }
-              }
             }
-          }
-        }
-      ],
-      "subTotals": [
-        {
-          "properties": {
-            "perRowLevel": {
-              "expr": {
-                "Literal": {
-                  "Value": "true"
-                }
-              }
-            },
-            "columnSubtotals": {
-              "expr": {
-                "Literal": {
-                  "Value": "false"
-                }
-              }
-            }
-          }
-        },
-        {
-          "properties": {
-            "fontSize": {
-              "expr": {
-                "Literal": {
-                  "Value": "10D"
-                }
-              }
-            },
-            "applyToHeaders": {
-              "expr": {
-                "Literal": {
-                  "Value": "false"
-                }
-              }
-            },
-            "fontColor": {
-              "solid": {
-                "color": {
-                  "expr": {
-                    "Literal": {
-                      "Value": "'#505673'"
-                    }
-                  }
-                }
-              }
-            }
-          },
-          "selector": {
-            "id": "Row"
           }
         }
       ],
@@ -340,36 +393,6 @@
                 }
               }
             }
-          }
-        },
-        {
-          "properties": {
-            "backColor": {
-              "solid": {
-                "color": {
-                  "expr": {
-                    "Measure": {
-                      "Expression": {
-                        "SourceRef": {
-                          "Entity": "Measure"
-                        }
-                      },
-                      "Property": "Population Share Heatmap Color"
-                    }
-                  }
-                }
-              }
-            }
-          },
-          "selector": {
-            "data": [
-              {
-                "dataViewWildcard": {
-                  "matchingOption": 1
-                }
-              }
-            ],
-            "metadata": "Measure.Population Share"
           }
         },
         {
@@ -431,18 +454,41 @@
             ],
             "metadata": "Measure.Poverty Headcount Ratio"
           }
+        },
+        {
+          "properties": {
+            "backColor": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Measure"
+                        }
+                      },
+                      "Property": "Population Share Heatmap Color"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "selector": {
+            "data": [
+              {
+                "dataViewWildcard": {
+                  "matchingOption": 1
+                }
+              }
+            ],
+            "metadata": "Measure.Population Share"
+          }
         }
       ],
       "grid": [
         {
           "properties": {
-            "gridHorizontal": {
-              "expr": {
-                "Literal": {
-                  "Value": "true"
-                }
-              }
-            },
             "outlineColor": {
               "solid": {
                 "color": {
@@ -472,17 +518,18 @@
                   }
                 }
               }
-            }
-          }
-        }
-      ],
-      "rowHeaders": [
-        {
-          "properties": {
-            "fontSize": {
+            },
+            "gridHorizontal": {
               "expr": {
                 "Literal": {
-                  "Value": "9D"
+                  "Value": "true"
+                }
+              }
+            },
+            "imageHeight": {
+              "expr": {
+                "Literal": {
+                  "Value": "25D"
                 }
               }
             }
@@ -520,6 +567,31 @@
                   "Value": "false"
                 }
               }
+            },
+            "color": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "Literal": {
+                      "Value": "'backgroundDark'"
+                    }
+                  }
+                }
+              }
+            },
+            "radius": {
+              "expr": {
+                "Literal": {
+                  "Value": "8D"
+                }
+              }
+            },
+            "width": {
+              "expr": {
+                "Literal": {
+                  "Value": "1D"
+                }
+              }
             }
           }
         }
@@ -533,6 +605,48 @@
                   "Value": "false"
                 }
               }
+            },
+            "preset": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Custom'"
+                }
+              }
+            },
+            "transparency": {
+              "expr": {
+                "Literal": {
+                  "Value": "86D"
+                }
+              }
+            },
+            "shadowSpread": {
+              "expr": {
+                "Literal": {
+                  "Value": "0D"
+                }
+              }
+            },
+            "shadowBlur": {
+              "expr": {
+                "Literal": {
+                  "Value": "3D"
+                }
+              }
+            },
+            "angle": {
+              "expr": {
+                "Literal": {
+                  "Value": "90D"
+                }
+              }
+            },
+            "shadowDistance": {
+              "expr": {
+                "Literal": {
+                  "Value": "1D"
+                }
+              }
             }
           }
         }
@@ -540,13 +654,6 @@
       "padding": [
         {
           "properties": {
-            "left": {
-              "expr": {
-                "Literal": {
-                  "Value": "5D"
-                }
-              }
-            },
             "top": {
               "expr": {
                 "Literal": {
@@ -558,6 +665,13 @@
               "expr": {
                 "Literal": {
                   "Value": "0D"
+                }
+              }
+            },
+            "left": {
+              "expr": {
+                "Literal": {
+                  "Value": "5D"
                 }
               }
             },
@@ -574,6 +688,13 @@
       "title": [
         {
           "properties": {
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Regional economic and demographic structures'"
+                }
+              }
+            },
             "show": {
               "expr": {
                 "Literal": {
@@ -581,17 +702,10 @@
                 }
               }
             },
-            "fontSize": {
+            "titleWrap": {
               "expr": {
                 "Literal": {
-                  "Value": "10.5D"
-                }
-              }
-            },
-            "text": {
-              "expr": {
-                "Literal": {
-                  "Value": "'Regional economic and demographic structures'"
+                  "Value": "true"
                 }
               }
             },
@@ -607,10 +721,24 @@
                 }
               }
             },
+            "fontSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "10.5D"
+                }
+              }
+            },
             "bold": {
               "expr": {
                 "Literal": {
                   "Value": "true"
+                }
+              }
+            },
+            "fontFamily": {
+              "expr": {
+                "Literal": {
+                  "Value": "'''Segoe UI Semibold'', wf_segoe-ui_semibold, helvetica, arial, sans-serif'"
                 }
               }
             }
@@ -620,17 +748,17 @@
       "subTitle": [
         {
           "properties": {
-            "show": {
-              "expr": {
-                "Literal": {
-                  "Value": "false"
-                }
-              }
-            },
             "text": {
               "expr": {
                 "Literal": {
                   "Value": "''"
+                }
+              }
+            },
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
                 }
               }
             },
@@ -647,6 +775,20 @@
       "spacing": [
         {
           "properties": {
+            "customizeSpacing": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "verticalSpacing": {
+              "expr": {
+                "Literal": {
+                  "Value": "2D"
+                }
+              }
+            },
             "spaceBelowTitle": {
               "expr": {
                 "Literal": {

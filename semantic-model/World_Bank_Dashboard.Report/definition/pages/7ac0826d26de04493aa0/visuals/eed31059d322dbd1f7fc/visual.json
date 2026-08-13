@@ -1,5 +1,5 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.9.0/schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.10.0/schema.json",
   "name": "eed31059d322dbd1f7fc",
   "position": {
     "x": 20,
@@ -46,7 +46,8 @@
                 }
               },
               "queryRef": "Measure.GDP per Capita (PPP) Trend",
-              "nativeQueryRef": "GDP per Capita (PPP) Trend"
+              "nativeQueryRef": "GDP per Capita (PPP)",
+              "displayName": "GDP per Capita (PPP)"
             },
             {
               "field": {
@@ -60,7 +61,8 @@
                 }
               },
               "queryRef": "Measure.Goblal GDP per Capita (PPP) Trend",
-              "nativeQueryRef": "Goblal GDP per Capita (PPP) Trend"
+              "nativeQueryRef": "Goblal GDP per Capita (PPP)",
+              "displayName": "Goblal GDP per Capita (PPP)"
             }
           ]
         }

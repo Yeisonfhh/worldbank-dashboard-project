@@ -1,13 +1,13 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.10.0/schema.json",
-  "name": "b847335d774518a31fba",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.11.0/schema.json",
+  "name": "820cbc6d2e1d5e0a0e5b",
   "position": {
-    "x": 0.61522315837487951,
-    "y": 84.1123446829926,
-    "z": 13000,
-    "height": 61.991478754993096,
-    "width": 1093.5989650711515,
-    "tabOrder": 0
+    "x": 1059.9689151383277,
+    "y": 47.26888405346596,
+    "z": 6000,
+    "height": 42,
+    "width": 207.69661175007769,
+    "tabOrder": 5000
   },
   "visual": {
     "visualType": "slicer",
@@ -149,6 +149,19 @@
             }
           }
         }
+      ],
+      "slider": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          }
+        }
       ]
     },
     "visualContainerObjects": {
@@ -194,6 +207,26 @@
         {
           "properties": {}
         }
+      ],
+      "border": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "radius": {
+              "expr": {
+                "Literal": {
+                  "Value": "10D"
+                }
+              }
+            }
+          }
+        }
       ]
     },
     "syncGroup": {
@@ -202,6 +235,5 @@
       "filterChanges": true
     },
     "drillFilterOtherVisuals": true
-  },
-  "parentGroupName": "f00b30b34c280e2cd2fe"
+  }
 }

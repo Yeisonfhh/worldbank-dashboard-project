@@ -1,4 +1,4 @@
-renv/library/
+.venv/
 .env
-data/raw/
-data/processed/
+.vscode/
+*.log
