@@ -2,45 +2,67 @@
 
 # 🌍 World Bank: Global Economic Development & Income Distribution
 
-### *Building a scalable semantic layer to explore two decades of global GDP and demographic shifts*
-
-![Power BI](https://img.shields.io/badge/Power_BI-F2C811?style=for-the-badge&logo=powerbi&logoColor=black)
-![Architecture](https://img.shields.io/badge/Architecture-PBIP_Source_Control-0F2C59?style=for-the-badge&logo=git&logoColor=white)
-![Data Source](https://img.shields.io/badge/Data-World_Bank_WDI-00843D?style=for-the-badge&logo=worldhealthorganization&logoColor=white)
-![Status](https://img.shields.io/badge/Status-Completed-2EA44F?style=for-the-badge)
+**A production-grade semantic layer exploring two decades of global GDP and demographic shifts**
 
 <br>
 
-<img src="assets/dashboard_screenshot.png" alt="World Bank Dashboard Preview" width="100%">
+![Power BI](https://img.shields.io/badge/Power_BI-F2C811?style=flat-square&logo=powerbi&logoColor=black)
+![DAX](https://img.shields.io/badge/DAX-0F2C59?style=flat-square)
+![Power Query M](https://img.shields.io/badge/Power_Query_M-217346?style=flat-square)
+![PBIP](https://img.shields.io/badge/PBIP-Source_Controlled-0F2C59?style=flat-square&logo=git&logoColor=white)
+![Data](https://img.shields.io/badge/Data-World_Bank_WDI-00843D?style=flat-square)
+![Status](https://img.shields.io/badge/Status-Completed-2EA44F?style=flat-square)
 
 <br>
 
-### 🔴 [**View Live Dashboard**](https://app.powerbi.com/view?r=eyJrIjoiMGI0MDhkMTEtYmYxZi00NzQ4LTliZjktZGI4Y2YzMWI5YjQ2IiwidCI6ImE1ZGVjZDEwLTkxNjUtNDYzNi1hNjRjLTc5NTgwMDQyMTVmYSIsImMiOjR9)
+<a href="https://app.powerbi.com/view?r=eyJrIjoiMGI0MDhkMTEtYmYxZi00NzQ4LTliZjktZGI4Y2YzMWI5YjQ2IiwidCI6ImE1ZGVjZDEwLTkxNjUtNDYzNi1hNjRjLTc5NTgwMDQyMTVmYSIsImMiOjR9">
+  <img src="assets/dashboard_screenshot.png" alt="World Bank Dashboard Preview — click to open live report" width="100%">
+</a>
+
+<br><br>
+
+[![Open Live Dashboard](https://img.shields.io/badge/▶_OPEN_LIVE_DASHBOARD-118DFF?style=for-the-badge&logoColor=white&labelColor=0F2C59)](https://app.powerbi.com/view?r=eyJrIjoiMGI0MDhkMTEtYmYxZi00NzQ4LTliZjktZGI4Y2YzMWI5YjQ2IiwidCI6ImE1ZGVjZDEwLTkxNjUtNDYzNi1hNjRjLTc5NTgwMDQyMTVmYSIsImMiOjR9)
+<br>
+<sub>No install required · Opens in your browser</sub>
 
 </div>
 
----
+<br>
+
+## 📖 Table of Contents
+
+- [Overview](#-overview)
+- [Skills Demonstrated](#-skills-demonstrated)
+- [Key Features](#-key-features--smart-ui)
+- [Business Value & Insights](#-business-value--key-insights)
+- [Getting Started](#-getting-started)
+- [Technical Deep Dive](#️-technical-deep-dive) — architecture, star schema, DAX patterns
+- [Roadmap](#️-roadmap)
+- [Contact](#️-contact)
+
+<br>
 
 ## 📌 Overview
 
 This project demonstrates the design, optimization, and deployment of a robust **semantic layer** built to analyze global economic disparities, income distribution, and GDP per capita growth over the last two decades.
 
-Engineered using official data from the **World Bank — World Development Indicators (WDI)**, the data model is optimized for the VertiPaq engine, enabling seamless exploration of **217 economies (2000–2024)**. All financial figures are dynamically adjusted for **Purchasing Power Parity** *(PPP, constant 2021 international dollars)*.
+Engineered using official data from the **World Bank — World Development Indicators (WDI)**, the model is optimized for the VertiPaq engine, enabling seamless exploration of **217 economies (2000–2024)**. All financial figures are dynamically adjusted for **Purchasing Power Parity** *(PPP, constant 2021 international dollars)*.
 
-> **Analytics Engineering Focus:** Decoupled semantic model, version control readiness (CI/CD) via `.pbip`, advanced DAX aggregations, and structural data governance.
+> **Analytics Engineering Focus:** Decoupled semantic model, version-control-ready architecture (`.pbip`), advanced DAX aggregations, and structural data governance.
 
----
+<br>
 
-## 🛠️ Tech Stack & Tools
+## 🧠 Skills Demonstrated
 
-| Layer | Tools |
+| Area | Applied Skill |
 |---|---|
-| **BI & Analytics** | Power BI Desktop, VertiPaq Engine |
-| **Languages** | DAX (Data Analysis Expressions), M (Power Query) |
-| **Version Control** | Git, Power BI Project (`.pbip`) |
-| **Model Definition** | TMDL (Tabular Model Definition Language), JSON |
+| **Data Modeling** | Star schema design, decoupled dimensions, disconnected parameter tables |
+| **DAX Engineering** | Population-weighted aggregations, virtual filter injection (`TREATAS`), context-aware formatting |
+| **Data Storytelling** | Auto-updating narrative panels that adapt copy to the active filter context |
+| **Version Control** | `.pbip` project structure for Git diffing, branching, and CI/CD readiness |
+| **UX/UI Design** | Custom theming, guided visual hierarchy, dynamic conditional formatting |
 
----
+<br>
 
 ## 💡 Key Features & Smart UI
 
@@ -48,23 +70,82 @@ Engineered using official data from the **World Bank — World Development Indic
 |---|---|
 | 🌐 **Globe Map** | Orthographic choropleth visualizing GDP per capita concentration across hemispheres |
 | 🧠 **Smart Narrative** | Auto-updating KPI panel driven by `[Global Income Position]` and `[Economy in Focus]` — adapts contextually to every filter |
-| 📉 **Growth Timeline** | Bar chart flagging recession years vs. recovery phases via dynamic HEX color injection — `[GDP per Capita (PPP) Highlighted Color]` |
+| 📉 **Growth Timeline** | Bar chart flagging recession years vs. recovery phases via dynamic HEX color injection |
 | 🔬 **Regional Matrix** | `[Population Share]` vs. `[GDP Share]` — exposing structural economic gaps at regional granularity |
-| 🏅 **Benchmarking** | Dual-line chart powered by `[GDP per Capita (PPP) Trend]` — compares any country or region against the global average without breaking the filter context |
+| 🏅 **Benchmarking** | Dual-line chart comparing any country or region against the global average without breaking filter context |
 
----
+<br>
 
 ## 🎯 Business Value & Key Insights
 
 A well-architected semantic layer must seamlessly answer complex business questions. The model's dynamic DAX architecture surfaces the following macro-economic trends:
 
-**The Global Divide:** In 2024, despite a global average income of **$21,621 (PPP)**, the model exposes extreme structural gaps: North America generates **16.4% of global GDP** with only **4.7% of the population**, while South Asia holds **20.7% of the population** but accounts for only **9.4% of the GDP**.
+**The Global Divide** — In 2024, despite a global average income of **$21,621 (PPP)**, the model exposes extreme structural gaps: North America generates **16.4% of global GDP** with only **4.7% of the population**, while South Asia holds **20.7% of the population** but accounts for only **9.4% of the GDP**.
 
-**Resilience Tracking:** The dynamic baselines accurately flag the **2020 global recession** across multiple regions, contrasting it directly with the **3.2% global recovery growth rate** marked in 2024.
+**Resilience Tracking** — The dynamic baselines accurately flag the **2020 global recession** across multiple regions, contrasting it directly with the **3.2% global recovery growth rate** marked in 2024.
 
----
+<br>
 
-## 🏗️ Project Architecture & Version Control
+## 🚀 Getting Started
+
+**Fastest path:** just [**open the live dashboard**](https://app.powerbi.com/view?r=eyJrIjoiMGI0MDhkMTEtYmYxZi00NzQ4LTliZjktZGI4Y2YzMWI5YjQ2IiwidCI6ImE1ZGVjZDEwLTkxNjUtNDYzNi1hNjRjLTc5NTgwMDQyMTVmYSIsImMiOjR9) — no install required.
+
+To run or audit it locally:
+
+<details>
+<summary><strong>📋 Prerequisites</strong></summary>
+<br>
+
+| Requirement | Details |
+|---|---|
+| **Power BI Desktop** | May 2023 or newer — required to open `.pbip` source files |
+| **Git** | Any recent version — required to clone the repository |
+| **VS Code** *(optional)* | Recommended for TMDL and DAX syntax highlighting |
+
+</details>
+
+<details>
+<summary><strong>⚡ Option 1 — Run the Dashboard</strong> <em>(explore the UI and KPIs)</em></summary>
+<br>
+
+```bash
+# 1. Clone the repository
+git clone https://github.com/your-username/worldbank-dashboard.git
+
+# 2. Navigate to the report folder and open in Power BI Desktop
+cd worldbank-dashboard/report
+# Open: World_Bank_Delivery.pbix
+```
+
+</details>
+
+<details>
+<summary><strong>🔬 Option 2 — Audit the Semantic Model</strong> <em>(for analytics engineers & reviewers)</em></summary>
+<br>
+
+```bash
+# 1. Clone the repository
+git clone https://github.com/your-username/worldbank-dashboard.git
+
+# 2. Open the semantic-model/ folder in VS Code
+cd worldbank-dashboard/semantic-model
+```
+
+| Folder | Contents |
+|---|---|
+| `.SemanticModel/` | Table definitions, relationships, column types (TMDL) |
+| `.Report/` | Visual layout, page config, theme references (JSON) |
+| `dax/` | Extracted and documented DAX measure patterns |
+
+</details>
+
+<br>
+
+## ⚙️ Technical Deep Dive
+
+<details>
+<summary><strong>🏗️ Project Architecture & Version Control</strong></summary>
+<br>
 
 Moving away from monolithic `.pbix` files, this repository uses the **Power BI Project (`.pbip`)** structure — a code-first approach that serializes the semantic model and report design into plain text (TMDL/JSON), enabling Git version control, branch collaboration, and CI/CD pipeline integration.
 
@@ -78,11 +159,11 @@ worldbank-dashboard/
 └── 📁 assets/           # Custom JSON themes and structural background templates
 ```
 
----
+</details>
 
-## ⚙️ Engineering & Technical Specifications
-
-### 🗂️ Data Model — Star Schema
+<details>
+<summary><strong>🗂️ Data Model — Star Schema</strong></summary>
+<br>
 
 The semantic layer follows a strict **Star Schema** optimized for the VertiPaq engine:
 
@@ -91,9 +172,11 @@ The semantic layer follows a strict **Star Schema** optimized for the VertiPaq e
 
 > 🗂️ Full schema diagram, table definitions, field glossary, and relationship map → [`docs/data-model.md`](./docs/data-model.md)
 
----
+</details>
 
-### ⚡ Advanced DAX Implementation
+<details>
+<summary><strong>⚡ Advanced DAX Implementation</strong></summary>
+<br>
 
 The semantic layer is built on three core DAX engineering patterns:
 
@@ -135,104 +218,48 @@ The UI is programmatically driven by DAX — no native conditional formatting pa
 
 > 📁 All measure code is extracted and documented in the [`/dax`](./dax/) folder for peer review.
 
----
+</details>
 
-### 🎨 UI/UX Design
+<details>
+<summary><strong>🎨 UI/UX Design</strong></summary>
+<br>
 
 - **Color System** — custom JSON theme aligned with World Bank corporate identity; blue-dominant, minimal chrome.
 - **Layout** — structured grid guiding the eye: global map → regional breakdown → country benchmarking.
 - **Typography** — editorial hierarchy separating KPI values, axis labels, and narrative text for fast scanning.
 
----
+</details>
 
-## 🚀 Getting Started
+<br>
 
-### 📋 Prerequisites
-
-| Requirement | Details |
-|---|---|
-| **Power BI Desktop** | May 2023 or newer — required to open `.pbip` source files |
-| **Git** | Any recent version — required to clone the repository |
-| **VS Code** *(optional)* | Recommended for TMDL and DAX syntax highlighting |
-
----
-
-### 🌐 Option 0 — View Online (No Install Required)
-
-> **Audience:** Anyone who just wants to explore the published dashboard in the browser.
-
-🔗 **[Open the live Power BI report](https://app.powerbi.com/view?r=eyJrIjoiMGI0MDhkMTEtYmYxZi00NzQ4LTliZjktZGI4Y2YzMWI5YjQ2IiwidCI6ImE1ZGVjZDEwLTkxNjUtNDYzNi1hNjRjLTc5NTgwMDQyMTVmYSIsImMiOjR9)**
-
----
-
-### ⚡ Option 1 — Run the Dashboard
-
-> **Audience:** Anyone exploring the UI, KPIs, and business insights.
-
-```bash
-# 1. Clone the repository
-git clone https://github.com/your-username/worldbank-dashboard.git
-
-# 2. Navigate to the report folder and open in Power BI Desktop
-cd worldbank-dashboard/report
-# Open: World_Bank_Delivery.pbix
-```
-
----
-
-### 🔬 Option 2 — Audit the Semantic Model
-
-> **Audience:** Analytics Engineers and technical reviewers inspecting the data model, DAX measures, and TMDL structure.
-
-```bash
-# 1. Clone the repository
-git clone https://github.com/your-username/worldbank-dashboard.git
-
-# 2. Open the semantic-model/ folder in VS Code
-cd worldbank-dashboard/semantic-model
-
-# Structure to review:
-# ├── .SemanticModel/   → TMDL table definitions, relationships, and column types
-# └── .Report/          → JSON visual layout and configuration
-```
-
-| Folder | Contents |
-|---|---|
-| `.SemanticModel/` | Table definitions, relationships, column types (TMDL) |
-| `.Report/` | Visual layout, page config, theme references (JSON) |
-| `dax/` | Extracted and documented DAX measure patterns |
-
----
-
-## 🛣️ Roadmap — Future Enhancements
-
-This project is continuously evolving. The following features and architectural improvements are planned for future releases:
+## 🛣️ Roadmap
 
 - [ ] **Automated CI/CD Pipeline** — GitHub Actions to deploy the `.pbip` semantic model directly to a Power BI Premium workspace on merge to `main`.
-- [ ] **Data Governance & RLS** — Dynamic Row-Level Security (RLS) restricting regional data access based on Active Directory user roles.
-- [ ] **Incremental Refresh** — Incremental refresh policies on `FACT_WORLD_BANK_DATA` to optimize VertiPaq memory as new yearly WDI data is ingested.
-- [ ] **Predictive Analytics** — Python-based GDP per capita forecasting model (via Power BI integration) projecting 5-year trends based on historical volatility.
+- [ ] **Data Governance & RLS** — Dynamic Row-Level Security restricting regional data access based on Active Directory user roles.
+- [ ] **Incremental Refresh** — Refresh policies on `FACT_WORLD_BANK_DATA` to optimize VertiPaq memory as new yearly WDI data is ingested.
+- [ ] **Predictive Analytics** — Python-based GDP per capita forecasting model projecting 5-year trends based on historical volatility.
 
----
+<br>
 
 ## 🤝 Acknowledgments & Data Source
 
-- Data provided by the **[World Bank Open Data](https://data.worldbank.org/)** portal — World Development Indicators (WDI).
-- Indicators: **GDP per capita, PPP** *(constant 2021 international $)*, **Gini index**, **Poverty headcount ratio**, and **Population totals**.
+Data provided by the **[World Bank Open Data](https://data.worldbank.org/)** portal — World Development Indicators (WDI).
+Indicators: **GDP per capita, PPP** *(constant 2021 international $)*, **Gini index**, **Poverty headcount ratio**, **Population totals**.
+
+<br>
 
 ---
 
-## ✉️ Contact
-
 <div align="center">
 
-**Yeison**
-Data Analyst · Analytics Engineer
+## ✉️ Contact
 
-<br>
+**Yeison** · Data Analyst / Analytics Engineer
 
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](TU_LINK_DE_LINKEDIN)
 [![Portfolio](https://img.shields.io/badge/Portfolio-000000?style=for-the-badge&logo=githubpages&logoColor=white)](TU_LINK_DEL_PORTAFOLIO)
 [![Email](https://img.shields.io/badge/Email-EA4335?style=for-the-badge&logo=gmail&logoColor=white)](mailto:TU_CORREO@gmail.com)
+
+<sub>[↑ Back to top](#-world-bank-global-economic-development--income-distribution)</sub>
 
 </div>
